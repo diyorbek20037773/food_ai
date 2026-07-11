@@ -19,8 +19,18 @@
 | Offline | Yo'q | Ha (service worker, cache) |
 | Push | Yo'q | Ha (yangi joy, bron eslatma) |
 
-PWA = website `/demo` oqimining to'liq, app-vari, o'rnatiladigan versiyasi.
-TG Mini App bilan bir xil mahsulot, lekin Telegram'dan tashqarida — mustaqil web-app.
+PWA = to'liq, app-vari, o'rnatiladigan iste'molchi ilova. TG Mini App bilan bir xil
+mahsulot va **bir xil backend** (`../backend`), lekin Telegram'dan tashqarida.
+
+Oqim:
+```
+Lokatsiyani yoqadi (navigator.geolocation)  →  koordinata
+  → "Nima yemoqchisiz?" (matn YOKI ovoz)
+  → backend (Gemini niyat + geo qidiruv)
+  → YAQIN ovqatlanish joylari kartalari
+  → bron / navigatsiya / taxi   + AI javobi ovozda
+```
+**Barcha AI/voice/geo mantiqi backend'da** — mijozda Gemini/voice kaliti YO'Q.
 
 ## 2. Texnologiya steki
 
@@ -51,6 +61,26 @@ TG Mini App bilan bir xil mahsulot, lekin Telegram'dan tashqarida — mustaqil w
   safe-area, splash. Delivery-app estetikasidan qochish saqlanadi.
 - **Offline holat:** ulanish yo'qligini aniq ko'rsatish, cache'langan kontentni berish.
 
+## 3b. Geolokatsiya, ovoz va backend (MUHIM)
+
+**Geo (yaqin joylar):**
+- `navigator.geolocation.getCurrentPosition()` — HTTPS shart (PWA'da bor). Ruxsat
+  so'raladi; rad etilsa qo'lda shahar/tuman tanlash fallback.
+- Koordinata backend `POST /api/nearby` yoki `/api/chat` ga. Saralash backend'da.
+- Standalone rejimda ruxsat bir marta so'raladi, keyin cache.
+
+**Ovoz (voice):**
+- `MediaRecorder` / Web Audio bilan audio olinadi (mikrofon ruxsati). Ikki rejim:
+  - **Realtime (primary):** `WS /api/voice/live` — audio stream ↔ ovozli javob.
+  - **Pipeline (fallback):** audio → `POST /api/voice` → transkript + ovozli javob.
+- Javob ovozi Web Audio orqali ijro. Ishlamasa **matn'ga** tushadi (voice qulaylik).
+- iOS Safari cheklovlarini hisobga ol (autoplay/mikrofon — user gesture ichida).
+
+**Backend ulanish:**
+- Barcha so'rovlar `../backend` (`NEXT_PUBLIC_API_URL`). Kalit mijozda YO'Q.
+- Restoran obyekt shakli backend bilan bir xil — website `mock.ts` bilan mos.
+- Offline: cache'langan oxirgi natijalar ko'rsatiladi, "oflayn" belgisi bilan.
+
 ## 4. Dizayn
 Website design tizimini **to'g'ridan-to'g'ri** ishlatadi (bir xil Next stek):
 `globals.css` tokenlar, `Button`/`Card`/`Logo`, i18n `messages`. website'dan farqi —
@@ -70,7 +100,12 @@ src/
   sw.ts                  # Serwist service worker
   components/
     TabBar.tsx  InstallPrompt.tsx  ChatView.tsx  RestaurantCard.tsx
-  lib/mock.ts
+    VoiceButton.tsx        # MediaRecorder → realtime/pipeline
+    LocationGate.tsx       # geolocation ruxsat / fallback
+  services/
+    api.ts                 # backend REST (NEXT_PUBLIC_API_URL)
+    voiceClient.ts         # WS realtime + pipeline fallback
+  lib/mock.ts              # backend yo'q paytda dev mock
 messages/{uz,ru,en}.json
 public/icons/            # 192, 512, maskable, apple-touch
 next.config.mjs          # withSerwist + next-intl
@@ -87,6 +122,8 @@ Test: Chrome DevTools → Application → Manifest/Service Workers; Lighthouse P
 ## 7. Tugallanish mezoni
 - [ ] Lighthouse PWA: installable ✓, offline ishlaydi ✓
 - [ ] Home-screen'ga o'rnatiladi (Android/desktop), iOS yo'riqnoma
+- [ ] Lokatsiya → yaqin joylar ko'rinadi (masofa bo'yicha)
+- [ ] Ovoz: realtime yoki pipeline ishlaydi; ishlamasa matn'ga tushadi
 - [ ] uz/ru/en + light/dark
 - [ ] Offline'da app-shell + cache'langan kontent ochiladi
 - [ ] `npm run build` toza; tab-bar navigatsiya, install tugma ishlaydi

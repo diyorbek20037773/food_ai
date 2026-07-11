@@ -26,8 +26,14 @@ AI 30 soniyada mos joyni topadi, bron qiladi, yo'l ko'rsatadi.
 | Papka | Nima | Holat |
 |-------|------|-------|
 | [`website/`](./website) | Marketing sayt (Next.js 15) | ✅ Tayyor |
+| [`backend/`](./backend) | Umumiy API: Gemini AI, ovoz (STT/TTS + realtime), geo-qidiruv | 📋 Rejalashtirilgan |
 | [`tg-mini-app/`](./tg-mini-app) | Telegram Mini App | 📋 Rejalashtirilgan |
 | [`pwa/`](./pwa) | Progressive Web App | 📋 Rejalashtirilgan |
+
+**Texnik yadro:** `tg-mini-app` va `pwa` bir xil `backend`'ni ishlatadi — lokatsiya →
+yaqin ovqatlanish joylari, tabiiy tilda (matn/ovoz) qidiruv. AI: **Gemini API**.
+Ovoz: real-time gaplashuv (primary) + STT/TTS pipeline (fallback). API kalitlar faqat
+backend'da.
 
 ## Website — ishga tushirish
 
@@ -42,8 +48,9 @@ npm run dev      # http://localhost:3000
 
 ## Yo'l xaritasi
 
-- [x] Marketing website (landing + AI-chat demo)
-- [ ] Telegram Mini App
+- [x] Marketing website (info-only)
+- [ ] Backend API (Gemini AI, ovoz, geo-qidiruv)
+- [ ] Telegram Mini App (lokatsiya, ovoz, bron)
 - [ ] PWA (offline, push, home-screen)
 - [ ] Restoran B2B dashboard + real POS integratsiya
 

@@ -23,7 +23,7 @@ FoodGPT to'ldiradi.
 
 ## 2. Repo tuzilishi (monorepo)
 
-Bitta repo, uchta mustaqil mahsulot:
+Bitta repo, to'rtta mustaqil loyiha (uch mijoz + bitta backend):
 
 ```
 food_ai/
@@ -32,6 +32,9 @@ food_ai/
 ├── .gitignore         # umumiy ignore (barcha subprojectlar uchun)
 ├── website/           # ✅ QURILGAN — marketing sayt (Next.js)
 │   └── CLAUDE.md       #    website qoidalari
+├── backend/           # 📋 REJALASHTIRILGAN — umumiy API server (Node+Fastify)
+│   ├── CLAUDE.md       #    backend qoidalari (Gemini, voice, geo)
+│   └── PLAN.md         #    implementatsiya rejasi
 ├── tg-mini-app/       # 📋 REJALASHTIRILGAN — Telegram Mini App
 │   ├── CLAUDE.md       #    tg-mini-app qoidalari
 │   └── PLAN.md         #    implementatsiya rejasi
@@ -44,11 +47,15 @@ food_ai/
 | Loyiha | Nima | Holat |
 |--------|------|-------|
 | `website/` | Marketing sayt: g'oya, muammo/yechim, imkoniyatlar, demo, aloqa | ✅ Tayyor |
+| `backend/` | Umumiy API: Gemini AI, voice (STT/TTS+realtime), geo-qidiruv, restoran DB | 📋 Plan bor, kod yo'q |
 | `tg-mini-app/` | Telegram ichida ishlaydigan asosiy iste'molchi ilova | 📋 Plan bor, kod yo'q |
 | `pwa/` | O'rnatiladigan veb-ilova (offline, push, home-screen) | 📋 Plan bor, kod yo'q |
 
 Har biri o'z `package.json`, `node_modules`, dev serveri bilan **mustaqil**.
 Root'da monorepo asbobi (turbo/nx) YO'Q — oddiy papkalar, kerak bo'lsa keyin qo'shiladi.
+
+**Mijoz → backend:** `tg-mini-app` va `pwa` bir xil `backend` API'ni ishlatadi
+(bitta AI/voice/geo mantiqi, ikki mijoz). `website` — statik marketing, backend'siz.
 
 ---
 
@@ -73,7 +80,45 @@ Root'da monorepo asbobi (turbo/nx) YO'Q — oddiy papkalar, kerak bo'lsa keyin q
 
 ---
 
-## 4. Umumiy konvensiyalar
+## 4. Mahsulot arxitekturasi (AI · voice · geo)
+
+Yadro oqim (`tg-mini-app` va `pwa` da bir xil):
+
+```
+Foydalanuvchi
+  │  (1) lokatsiyani yoqadi  →  koordinatalar (lat/lng)
+  │  (2) so'raydi: matn YOKI ovoz  ("shashlik yemoqchiman")
+  ▼
+BACKEND (umumiy API server)
+  ├─ VOICE LAYER (abstract, provayder ENV bilan almashadi):
+  │    • Primary:  real-time speech-to-speech (Gemini Live / free realtime API)
+  │    • Fallback: STT (ovoz→matn) → Gemini (matn) → TTS (matn→ovoz)
+  │    Interfeys bir xil — provayder tokeni/limiti o'zgarsa mijoz kodi o'zgarmaydi.
+  ├─ AI (Gemini API): niyatni tushunadi (taom, budjet, kayfiyat, kompaniya, vaqt)
+  ├─ GEO-QIDIRUV: koordinata + niyat → yaqin, ochiq, mos restoranlar (masofa bo'yicha)
+  └─ RESTORAN DATA: real-time holat (ochiq/tayyor/kutish), menyu, narx, bron
+  ▼
+Mijoz: yaqin joylar ro'yxati (masofa/narx/holat) → bron / navigatsiya / taxi
+       + AI javobini ovozda o'qiydi (TTS/realtime)
+```
+
+**Qat'iy qoidalar:**
+- **API kalitlari (Gemini, voice, xarita) — FAQAT backend'da.** Hech qachon mijoz
+  bundle'iga (TG/PWA/website) kirmasin. Mijoz backend endpoint'iga so'rov yuboradi.
+- **Voice — abstract qatlam.** Backend `/voice` (yoki realtime WS) interfeysi bitta;
+  ichida provayder (Gemini realtime / STT+TTS / free token) almashtiriladigan.
+  `.env`: `VOICE_PROVIDER=realtime|pipeline`, `GEMINI_API_KEY`, `STT_*`, `TTS_*`.
+- **Geo:** lokatsiya mijozda olinadi (TG `location`, PWA `navigator.geolocation`),
+  backend'ga koordinata yuboriladi; backend masofa + holat bo'yicha saralaydi.
+- **Til:** AI javoblari uz/ru/en — foydalanuvchi tiliga mos. O'zbek tili birinchi.
+- **Free token cheklovi:** limit/xatolikda voice fallback'ga o'tadi, matn baribir ishlaydi
+  (voice — qulaylik, majburiy emas). Grasefully degrade.
+
+Backend tafsilotlari: `backend/CLAUDE.md`. Mijoz ulanishi: har mijozning CLAUDE.md.
+
+---
+
+## 5. Umumiy konvensiyalar
 - TypeScript strict. Kod/kommentlar inglizcha; UI matnlari i18n orqali uz/ru/en.
 - Har loyiha o'z papkasida mustaqil ishlaydi (`cd website && npm run dev`).
 - Sehrli hex yo'q — CSS var / Tailwind token.
@@ -84,10 +129,11 @@ Root'da monorepo asbobi (turbo/nx) YO'Q — oddiy papkalar, kerak bo'lsa keyin q
 
 ---
 
-## 5. Roadmap (umumiy)
+## 6. Roadmap (umumiy)
 1. **website** ✅ — birinchi taassurot, investor/hamkor uchun
-2. **tg-mini-app** — asosiy iste'molchi kanali (O'zbekistonda TG dominant)
-3. **pwa** — brauzer/home-screen ilova, offline
-4. **keyin:** restoran B2B dashboard, real POS integratsiya (iiko/Jowi/Poster)
+2. **backend** — Gemini AI, voice layer, geo-qidiruv (mijozlar shunga ulanadi)
+3. **tg-mini-app** — asosiy iste'molchi kanali (O'zbekistonda TG dominant)
+4. **pwa** — brauzer/home-screen ilova, offline
+5. **keyin:** restoran B2B dashboard, real POS integratsiya (iiko/Jowi/Poster)
 
 Har bo'sqichda: uz/ru/en, light/dark, responsive, `npm run build` toza.
