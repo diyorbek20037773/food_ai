@@ -36,6 +36,11 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href="#restaurants" className="hover:text-ink">
+                  {tn("restaurants")}
+                </a>
+              </li>
+              <li>
                 <a href="#launch" className="hover:text-ink">
                   {tn("launch")}
                 </a>

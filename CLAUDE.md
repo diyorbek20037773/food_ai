@@ -98,9 +98,19 @@ BACKEND (umumiy API server)
   ├─ GEO-QIDIRUV: koordinata + niyat → yaqin, ochiq, mos restoranlar (masofa bo'yicha)
   └─ RESTORAN DATA: real-time holat (ochiq/tayyor/kutish), menyu, narx, bron
   ▼
-Mijoz: yaqin joylar ro'yxati (masofa/narx/holat) → bron / navigatsiya / taxi
+Mijoz: yaqin joylar ro'yxati (masofa/narx/holat)
+       → bron  |  ZAKAZ (menyu→savat→to'lov)  |  navigatsiya  |  taxi
        + AI javobini ovozda o'qiydi (TTS/realtime)
 ```
+
+**Delivery (zakaz + dastavka) modeli:**
+- **Zakaz FoodGPT'da:** AI chatdan menyu → savat → to'lov. Bu bizning yadromiz —
+  foydalanuvchi tajribasi va data shu yerda.
+- **Dastavka hamkor orqali:** yetkazishni FoodGPT o'zi qilmaydi — **restoranning o'z
+  kuryeri** yoki **hamkor kuryer API** (masalan Yandex/Uzum kuryer, kelajakda) bajaradi.
+  Yengil operatsiya, og'ir logistikasiz.
+- Bu strategik: biz «yana bir delivery ilova» emasmiz. Zakaz/discovery bizniki,
+  yetkazish — hamkor infratuzilma. Yadro moat baribir **data + bron**da qoladi.
 
 **Qat'iy qoidalar:**
 - **API kalitlari (Gemini, voice, xarita) — FAQAT backend'da.** Hech qachon mijoz

@@ -6,6 +6,7 @@
   "nav": {
     "features": "Imkoniyatlar",
     "how": "Qanday ishlaydi",
+    "restaurants": "Restoranlar uchun",
     "team": "Jamoa",
     "contact": "Aloqa",
     "launch": "Ilovani ochish",
@@ -65,8 +66,8 @@
         "Tabiiy tilda yozing yoki gapiring",
         "AI mos joyni darhol tavsiya qiladi",
         "Real vaqtda: ochiqmi, tayyormi, navbat",
-        "Bir bosishda stol bron qiling",
-        "Navigatsiya yoki taksi — o'sha yerda"
+        "Bron qiling yoki zakaz bering",
+        "Yetkazib berish, navigatsiya yoki taksi"
       ]
     }
   },
@@ -86,6 +87,10 @@
       {
         "title": "Bir bosishda bron",
         "desc": "Telefon qilib so'rash yo'q. Bo'sh stolni ko'ring va o'sha zahoti bron qiling."
+      },
+      {
+        "title": "Zakaz va yetkazib berish",
+        "desc": "AI chatdan to'g'ridan-to'g'ri zakaz bering — restoran yoki hamkor kuryer eshigingizgacha yetkazadi."
       },
       {
         "title": "Taksi va navigatsiya",
@@ -117,10 +122,61 @@
       },
       {
         "n": "03",
-        "title": "Bron qiling va boring",
-        "desc": "Stolni bron qiling, taksi chaqiring yoki navigatsiyani oching. Bitta oqimda."
+        "title": "Bron, zakaz yoki boring",
+        "desc": "Stol bron qiling, zakaz berib uyga yetkazing yoki taksi/navigatsiyani oching — bitta oqimda."
       }
     ]
+  },
+  "stats": {
+    "eyebrow": "Nega hozir",
+    "title": "To'g'ri vaqt, ochiq bozor",
+    "subtitle": "O'zbekiston FoodTech bozori tez o'smoqda, lekin ovqat topish muammosi hali yechilmagan.",
+    "items": [
+      { "value": "30 soniya", "label": "«bugun nima yeyman?» savoliga javob" },
+      { "value": "1 ilova", "label": "5 ta o'rniga — chat, bron, zakaz, yo'l" },
+      { "value": "3 til", "label": "o'zbek, rus, ingliz — ovoz bilan" },
+      { "value": "24/7", "label": "real vaqtda ochiq va tayyor holat" }
+    ],
+    "note": "Google Maps'da ovqat izlash odati O'zbekistonda shakllanmagan — bu bo'shliqni FoodGPT to'ldiradi."
+  },
+  "useCases": {
+    "eyebrow": "Kim uchun",
+    "title": "Har kim uchun to'g'ri qaror",
+    "subtitle": "FoodGPT vaziyatingizni tushunadi — kim bo'lishingizdan qat'i nazar.",
+    "items": [
+      { "emoji": "🎓", "title": "Talabalar", "desc": "«50 ming so'mga nima yeyman?» — arzon, yaqin va tez variantlar." },
+      { "emoji": "👨‍👩‍👧", "title": "Oilalar", "desc": "Bolalar zonasi, keng stol, oilaviy menyu bo'lgan joylar." },
+      { "emoji": "💕", "title": "Juftliklar", "desc": "Romantik muhit, tinch, chiroyli restoranlar — kayfiyatga mos." },
+      { "emoji": "✈️", "title": "Sayyohlar", "desc": "Haqiqiy milliy taomlar va mahalliylar sevadigan joylar." },
+      { "emoji": "💼", "title": "Ofis xodimlari", "desc": "15 daqiqada ovqatlanish yoki ish stoliga tez yetkazish." },
+      { "emoji": "👥", "title": "Do'stlar", "desc": "Katta kompaniya, jonli muhit, budjetga mos joylar." }
+    ]
+  },
+  "tech": {
+    "eyebrow": "Qanday ishlaydi",
+    "title": "Oddiy tashqarida, aqlli ichkarida",
+    "subtitle": "FoodGPT ortida real texnologiya — niyatni tushunadigan AI va jonli restoran ma'lumoti.",
+    "items": [
+      { "title": "Niyatni tushunuvchi AI", "desc": "So'rovingizni tahlil qiladi: taom, budjet, kayfiyat, kompaniya va vaqtni ajratadi — filtr sozlash shart emas." },
+      { "title": "Ovozli suhbat", "desc": "Yozishni xohlamasangiz — gapiring. AI ovozda tushunadi va ovozda javob beradi." },
+      { "title": "Jonli restoran ma'lumoti", "desc": "Ochiqmi, taom tayyormi, kutish vaqti, bo'sh stol — restoran panelidan real vaqtda." },
+      { "title": "Geo-qidiruv", "desc": "Lokatsiyangizga qarab eng yaqin, ochiq va mos joylarni masofa bo'yicha saralaydi." },
+      { "title": "Zakaz va yetkazib berish", "desc": "Chatdan zakaz — restoran yoki hamkor kuryer yetkazadi. Menyu, savat, to'lov bitta joyda." },
+      { "title": "Xavfsiz to'lov", "desc": "To'lov va ma'lumotlaringiz himoyalangan; kalitlar hech qachon ilovada saqlanmaydi." }
+    ]
+  },
+  "forRestaurants": {
+    "eyebrow": "Restoranlar uchun",
+    "title": "Ko'proq mijoz, kamroq ish",
+    "subtitle": "FoodGPT restoranlarga yangi mijoz oqimini olib keladi va ishlarini oson boshqarish imkonini beradi.",
+    "items": [
+      { "title": "Bepul boshqaruv paneli", "desc": "Menyu, narx, ish vaqti va aksiyalarni bir joydan yangilang." },
+      { "title": "Real vaqt holati", "desc": "«Bugun osh tayyor», «shashlik 15 daqiqa», «bo'sh stol bor» — bir bosishda." },
+      { "title": "Yangi mijozlar", "desc": "Aynan sizga mos, yaqin foydalanuvchilar AI orqali sizni topadi." },
+      { "title": "Analitika", "desc": "Necha kishi ko'rdi, bosdi, bron qildi — hammasini raqamlarda ko'ring." }
+    ],
+    "cta": "Hamkor bo'lish",
+    "ctaNote": "Restoran egasimisiz? Biz bilan bog'laning."
   },
   "team": {
     "eyebrow": "Jamoa",

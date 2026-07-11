@@ -67,7 +67,11 @@ POST /api/nearby        # { location, filters } → { restaurants[] } (geo saral
 POST /api/voice         # pipeline: audio → { transcript, reply, audioUrl }
 WS   /api/voice/live    # realtime: audio stream ↔ audio stream (Gemini Live proxy)
 GET  /api/restaurants/:id
+GET  /api/restaurants/:id/menu   # zakaz uchun menyu
 POST /api/reserve       # { restaurantId, time, people } → bron (keyin real)
+POST /api/order         # { restaurantId, items[], address, payment } → zakaz
+                        #   Dastavka: restoran o'z kuryeri YOKI hamkor kuryer API.
+                        #   FoodGPT o'zi yetkazmaydi — zakaz+to'lov bizda, dastavka hamkor.
 GET  /health
 ```
 
