@@ -4,8 +4,9 @@ import { Hero } from "@/components/site/hero";
 import { ProblemSolution } from "@/components/site/problem-solution";
 import { Features } from "@/components/site/features";
 import { HowItWorks } from "@/components/site/how-it-works";
-import { Team } from "@/components/site/team";
 import { DemoVideo } from "@/components/site/demo-video";
+import { Launch } from "@/components/site/launch";
+import { Team } from "@/components/site/team";
 import { Contact } from "@/components/site/contact";
 import { Footer } from "@/components/site/footer";
 
@@ -26,6 +27,7 @@ export default async function Home({
         <Features />
         <HowItWorks />
         <DemoVideo />
+        <Launch />
         <Team />
         <Contact />
       </main>

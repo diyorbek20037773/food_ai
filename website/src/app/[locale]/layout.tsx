@@ -51,6 +51,7 @@ export default async function LocaleLayout({
     <html lang={locale} suppressHydrationWarning className={inter.variable}>
       <body className="min-h-screen bg-bg text-ink font-sans antialiased">
         <ThemeProvider>
+          <div aria-hidden className="warm-canvas" />
           <NextIntlClientProvider messages={messages}>
             {children}
           </NextIntlClientProvider>

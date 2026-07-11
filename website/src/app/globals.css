@@ -5,75 +5,87 @@
 /* ============================================================
    FoodGPT — Design tokens
    Apple × ChatGPT × Airbnb × Linear. Warm minimalism.
-   Orange = sole accent. Green = semantic (open/ready) only.
+   Light = warm cream (not sterile white). Orange = sole accent.
+   Green = semantic (open/ready) only.
    ============================================================ */
 
 :root {
-  --bg: #fafaf9;
+  /* Warm cream ground — not #FFF. Neutrals biased toward orange. */
+  --bg: #fbf7f2;
+  --bg-tint: #f6efe6; /* warmer section band */
   --surface: #ffffff;
-  --surface-2: #f5f4f2;
-  --ink: #111827;
-  --ink-soft: #6b7280;
-  --ink-mute: #9ca3af;
+  --surface-2: #f5efe7;
+  --ink: #1a1410;
+  --ink-soft: #6b6259;
+  --ink-mute: #a89f94;
   --accent: #ff6b35;
-  --accent-ink: #e24a16;
+  --accent-ink: #d64815;
   --amber: #ffb703;
-  --success: #22c55e;
-  --line: rgba(17, 24, 39, 0.08);
+  --success: #1fa855;
+  --line: rgba(26, 20, 16, 0.09);
+  --line-strong: rgba(26, 20, 16, 0.14);
   --ring: rgba(255, 107, 53, 0.45);
-  --glass: rgba(255, 255, 255, 0.72);
+  --glass: rgba(251, 247, 242, 0.72);
+  --shadow-tint: 38, 26, 16;
 }
 
-/* Dark via system preference (tokens only — components read tokens) */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0e0f11;
-    --surface: #17181b;
-    --surface-2: #1e2024;
-    --ink: #f5f4f2;
-    --ink-soft: #a1a1aa;
-    --ink-mute: #71717a;
+    --bg: #100d0b;
+    --bg-tint: #16110d;
+    --surface: #1b1611;
+    --surface-2: #241d16;
+    --ink: #f7f2ec;
+    --ink-soft: #ad9f92;
+    --ink-mute: #6f6459;
     --accent: #ff7a47;
-    --accent-ink: #ff6b35;
+    --accent-ink: #ff9166;
     --amber: #f5a800;
     --success: #34d399;
-    --line: rgba(255, 255, 255, 0.09);
+    --line: rgba(255, 245, 235, 0.1);
+    --line-strong: rgba(255, 245, 235, 0.16);
     --ring: rgba(255, 122, 71, 0.5);
-    --glass: rgba(23, 24, 27, 0.72);
+    --glass: rgba(16, 13, 11, 0.72);
+    --shadow-tint: 0, 0, 0;
   }
 }
 
-/* Explicit theme toggle wins over the media query, both directions */
 :root[data-theme="light"] {
-  --bg: #fafaf9;
+  --bg: #fbf7f2;
+  --bg-tint: #f6efe6;
   --surface: #ffffff;
-  --surface-2: #f5f4f2;
-  --ink: #111827;
-  --ink-soft: #6b7280;
-  --ink-mute: #9ca3af;
+  --surface-2: #f5efe7;
+  --ink: #1a1410;
+  --ink-soft: #6b6259;
+  --ink-mute: #a89f94;
   --accent: #ff6b35;
-  --accent-ink: #e24a16;
+  --accent-ink: #d64815;
   --amber: #ffb703;
-  --success: #22c55e;
-  --line: rgba(17, 24, 39, 0.08);
+  --success: #1fa855;
+  --line: rgba(26, 20, 16, 0.09);
+  --line-strong: rgba(26, 20, 16, 0.14);
   --ring: rgba(255, 107, 53, 0.45);
-  --glass: rgba(255, 255, 255, 0.72);
+  --glass: rgba(251, 247, 242, 0.72);
+  --shadow-tint: 38, 26, 16;
 }
 
 :root[data-theme="dark"] {
-  --bg: #0e0f11;
-  --surface: #17181b;
-  --surface-2: #1e2024;
-  --ink: #f5f4f2;
-  --ink-soft: #a1a1aa;
-  --ink-mute: #71717a;
+  --bg: #100d0b;
+  --bg-tint: #16110d;
+  --surface: #1b1611;
+  --surface-2: #241d16;
+  --ink: #f7f2ec;
+  --ink-soft: #ad9f92;
+  --ink-mute: #6f6459;
   --accent: #ff7a47;
-  --accent-ink: #ff6b35;
+  --accent-ink: #ff9166;
   --amber: #f5a800;
   --success: #34d399;
-  --line: rgba(255, 255, 255, 0.09);
+  --line: rgba(255, 245, 235, 0.1);
+  --line-strong: rgba(255, 245, 235, 0.16);
   --ring: rgba(255, 122, 71, 0.5);
-  --glass: rgba(23, 24, 27, 0.72);
+  --glass: rgba(16, 13, 11, 0.72);
+  --shadow-tint: 0, 0, 0;
 }
 
 @layer base {
@@ -103,7 +115,6 @@
     letter-spacing: -0.02em;
   }
 
-  /* Visible keyboard focus everywhere */
   :focus-visible {
     outline: none;
     box-shadow: 0 0 0 3px var(--ring);
@@ -116,7 +127,6 @@
 }
 
 @layer components {
-  /* Section container */
   .container-x {
     width: 100%;
     max-width: 1200px;
@@ -129,7 +139,6 @@
     }
   }
 
-  /* Eyebrow label */
   .eyebrow {
     display: inline-flex;
     align-items: center;
@@ -141,7 +150,6 @@
     color: var(--accent-ink);
   }
 
-  /* Warm amber→orange text gradient (used sparingly on key words) */
   .text-gradient {
     background: linear-gradient(100deg, var(--accent) 0%, var(--amber) 100%);
     -webkit-background-clip: text;
@@ -149,7 +157,6 @@
     -webkit-text-fill-color: transparent;
   }
 
-  /* Ambient warm glow blob for hero background */
   .glow-blob {
     position: absolute;
     border-radius: 9999px;
@@ -157,9 +164,50 @@
     opacity: 0.5;
     pointer-events: none;
   }
+
+  /* Warm ambient page canvas — soft orange/amber wash top of page,
+     so light theme never reads as a flat white sheet. */
+  .warm-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(
+        60% 42% at 50% -8%,
+        color-mix(in srgb, var(--accent) 14%, transparent),
+        transparent 70%
+      ),
+      radial-gradient(
+        40% 30% at 88% 8%,
+        color-mix(in srgb, var(--amber) 12%, transparent),
+        transparent 70%
+      ),
+      radial-gradient(
+        45% 34% at 6% 22%,
+        color-mix(in srgb, var(--accent) 8%, transparent),
+        transparent 70%
+      );
+  }
+
+  /* Alternating warm section band for depth without color noise */
+  .band {
+    background: var(--bg-tint);
+  }
+
+  /* Layered soft shadow tokens tinted warm */
+  .shadow-soft {
+    box-shadow:
+      0 1px 2px rgba(var(--shadow-tint), 0.05),
+      0 10px 30px rgba(var(--shadow-tint), 0.07);
+  }
+  .shadow-soft-lg {
+    box-shadow:
+      0 2px 6px rgba(var(--shadow-tint), 0.06),
+      0 22px 60px rgba(var(--shadow-tint), 0.12);
+  }
 }
 
-/* Respect reduced motion globally */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

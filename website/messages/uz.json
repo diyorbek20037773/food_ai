@@ -8,7 +8,7 @@
     "how": "Qanday ishlaydi",
     "team": "Jamoa",
     "contact": "Aloqa",
-    "demo": "Demoni ko'rish",
+    "launch": "Ilovani ochish",
     "openMenu": "Menyuni ochish",
     "closeMenu": "Menyuni yopish"
   },
@@ -26,20 +26,22 @@
   "hero": {
     "badge": "O'zbekiston uchun AI ovqat hamrohi",
     "greeting": "Xayrli kech",
-    "title": "Bugun nima yemoqchisiz?",
-    "subtitle": "Shunchaki ayting — biz eng yaqin, ochiq va sizga mos joyni topamiz. Bron qilish, navigatsiya va taksi bitta oynada.",
-    "placeholders": [
-      "Shashlik yemoqchiman...",
-      "200 ming budjetga oilaviy joy...",
+    "title": "Bugun nima yeyishni AI hal qiladi",
+    "subtitle": "Tabiiy tilda so'rang — FoodGPT eng yaqin, ochiq va sizga mos joyni topadi. Bron, navigatsiya va taksi bitta oqimda. Telegram Mini App va o'rnatiladigan ilova ko'rinishida.",
+    "ctaPrimary": "Telegram'da ochish",
+    "ctaSecondary": "PWA ilova",
+    "soon": "Tez orada",
+    "example": "Masalan, shunday so'raysiz:",
+    "prompts": [
+      "Shashlik yemoqchiman",
+      "200 ming budjetga oilaviy joy",
       "Hozir osh qayerda tayyor?",
-      "Yaqin atrofda romantik restoran...",
-      "Tunda ochiq lag'mon joyi..."
+      "Tunda ochiq lag'mon joyi"
     ],
-    "send": "So'rash",
-    "tryDemo": "Jonli demoni sinab ko'ring",
-    "chips": ["🍢 Shashlik", "🍚 Osh", "☕ Nonushta", "🌙 Tunda ochiq"],
     "cardStatus": "Ochiq · ~15 daqiqada tayyor",
-    "cardMeta": "1.2 km · ⭐ 4.8 · 45 000 so'mdan"
+    "cardMeta": "1.2 km · ⭐ 4.8 · 45 000 so'mdan",
+    "cardName": "Besh Qozon",
+    "cardReply": "Sizga eng mos joyni topdim — hozir ochiq, tez tayyor bo'ladi."
   },
   "problem": {
     "eyebrow": "Muammo",
@@ -160,33 +162,15 @@
     "rights": "Barcha huquqlar himoyalangan.",
     "madeIn": "Toshkentda mehr bilan yaratilgan"
   },
-  "demo": {
-    "back": "Bosh sahifaga qaytish",
-    "title": "FoodGPT — Jonli demo",
-    "subtitle": "Namuna ma'lumot bilan ishlaydi. Xohlagan savolni yozing yoki tayyor variantni tanlang.",
-    "inputPh": "Nima yemoqchisiz?",
-    "send": "Yuborish",
-    "thinking": "FoodGPT o'ylayapti",
-    "youLabel": "Siz",
-    "aiIntro": "Ushbu joylarni topdim — barchasi hozir ochiq va real vaqtda tekshirilgan:",
-    "suggestions": [
-      "Shashlik yemoqchiman",
-      "200 ming budjetga oilaviy joy",
-      "Hozir osh qayerda tayyor?",
-      "Romantik restoran tavsiya qil"
-    ],
-    "card": {
-      "open": "Ochiq",
-      "ready": "tayyor",
-      "wait": "kutish",
-      "min": "daq",
-      "km": "km",
-      "from": "dan",
-      "reserve": "Bron qilish",
-      "navigate": "Navigatsiya",
-      "taxi": "Taksi"
-    },
-    "reserved": "Stol bron qilindi (demo)",
-    "disclaimer": "Bu demo — ma'lumotlar namuna uchun."
+  "launch": {
+    "eyebrow": "Ilovani oling",
+    "title": "FoodGPT tez orada ishga tushadi",
+    "subtitle": "Ilova Telegram Mini App va o'rnatiladigan PWA ko'rinishida bo'ladi. Bu sayt — loyiha tanishtiruvi.",
+    "tgTitle": "Telegram Mini App",
+    "tgDesc": "Telegram ichida ochiladi — o'rnatish shart emas. O'zbekistonda eng qulay kanal.",
+    "pwaTitle": "PWA ilova",
+    "pwaDesc": "Brauzerdan bir bosishda telefoningizga o'rnatiladi. Offline ham ishlaydi.",
+    "soon": "Tez orada",
+    "notify": "Xabar berilsin"
   }
 }

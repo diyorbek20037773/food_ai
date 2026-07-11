@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
 import { Logo } from "./logo";
 import { Badge } from "@/components/ui/badge";
 
@@ -37,9 +36,9 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <Link href="/demo" className="hover:text-ink">
-                  {tn("demo")}
-                </Link>
+                <a href="#launch" className="hover:text-ink">
+                  {tn("launch")}
+                </a>
               </li>
             </ul>
           </div>

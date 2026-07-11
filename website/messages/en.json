@@ -8,7 +8,7 @@
     "how": "How it works",
     "team": "Team",
     "contact": "Contact",
-    "demo": "See demo",
+    "launch": "Open the app",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
@@ -26,20 +26,22 @@
   "hero": {
     "badge": "An AI food companion for Uzbekistan",
     "greeting": "Good evening",
-    "title": "What are you craving today?",
-    "subtitle": "Just tell us — we'll find the nearest, open, best-fit place. Booking, navigation and taxi, all in one view.",
-    "placeholders": [
-      "I'm craving kebab...",
-      "A family spot on a 200k budget...",
+    "title": "AI decides what to eat today",
+    "subtitle": "Ask in plain language — FoodGPT finds the nearest, open, best-fit place. Booking, navigation and taxi in one flow. As a Telegram Mini App and an installable app.",
+    "ctaPrimary": "Open in Telegram",
+    "ctaSecondary": "PWA app",
+    "soon": "Coming soon",
+    "example": "For example, you'd ask:",
+    "prompts": [
+      "I'm craving kebab",
+      "A family spot on a 200k budget",
       "Where is plov ready right now?",
-      "A romantic restaurant nearby...",
-      "Lagman that's open late..."
+      "Lagman that's open late"
     ],
-    "send": "Ask",
-    "tryDemo": "Try the live demo",
-    "chips": ["🍢 Kebab", "🍚 Plov", "☕ Breakfast", "🌙 Open late"],
     "cardStatus": "Open · ready in ~15 min",
-    "cardMeta": "1.2 km · ⭐ 4.8 · from 45,000 UZS"
+    "cardMeta": "1.2 km · ⭐ 4.8 · from 45,000 UZS",
+    "cardName": "Besh Qozon",
+    "cardReply": "Found the best-fit place for you — open now, ready soon."
   },
   "problem": {
     "eyebrow": "The problem",
@@ -160,33 +162,15 @@
     "rights": "All rights reserved.",
     "madeIn": "Made with love in Tashkent"
   },
-  "demo": {
-    "back": "Back to home",
-    "title": "FoodGPT — Live demo",
-    "subtitle": "Runs on sample data. Ask anything or pick a ready-made prompt.",
-    "inputPh": "What are you craving?",
-    "send": "Send",
-    "thinking": "FoodGPT is thinking",
-    "youLabel": "You",
-    "aiIntro": "Found these spots — all open now and checked in real time:",
-    "suggestions": [
-      "I'm craving kebab",
-      "A family spot on a 200k budget",
-      "Where is plov ready right now?",
-      "Recommend a romantic restaurant"
-    ],
-    "card": {
-      "open": "Open",
-      "ready": "ready",
-      "wait": "wait",
-      "min": "min",
-      "km": "km",
-      "from": "from",
-      "reserve": "Reserve",
-      "navigate": "Navigate",
-      "taxi": "Taxi"
-    },
-    "reserved": "Table reserved (demo)",
-    "disclaimer": "This is a demo — data is illustrative."
+  "launch": {
+    "eyebrow": "Get the app",
+    "title": "FoodGPT launches soon",
+    "subtitle": "The app will ship as a Telegram Mini App and an installable PWA. This site is an introduction to the project.",
+    "tgTitle": "Telegram Mini App",
+    "tgDesc": "Opens right inside Telegram — nothing to install. The most convenient channel in Uzbekistan.",
+    "pwaTitle": "PWA app",
+    "pwaDesc": "Installs to your phone from the browser in one tap. Works offline too.",
+    "soon": "Coming soon",
+    "notify": "Notify me"
   }
 }

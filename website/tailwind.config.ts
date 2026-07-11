@@ -9,6 +9,7 @@ const config: Config = {
     extend: {
       colors: {
         bg: "var(--bg)",
+        "bg-tint": "var(--bg-tint)",
         surface: "var(--surface)",
         "surface-2": "var(--surface-2)",
         ink: "var(--ink)",
@@ -29,9 +30,7 @@ const config: Config = {
         control: "14px",
       },
       boxShadow: {
-        soft: "0 1px 2px rgba(17,24,39,.04), 0 8px 24px rgba(17,24,39,.06)",
-        "soft-lg": "0 2px 4px rgba(17,24,39,.04), 0 18px 48px rgba(17,24,39,.10)",
-        glow: "0 8px 40px rgba(255,107,53,.20)",
+        glow: "0 8px 40px rgba(255,107,53,.22)",
       },
       maxWidth: {
         content: "1200px",

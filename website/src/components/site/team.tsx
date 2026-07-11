@@ -9,7 +9,7 @@ export function Team() {
   const slots = [0, 1, 2, 3];
 
   return (
-    <section id="team" className="scroll-mt-24 bg-surface-2/50 py-20 md:py-28">
+    <section id="team" className="band scroll-mt-24 border-y border-line py-20 md:py-28">
       <div className="container-x">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="eyebrow mb-4 justify-center">{t("eyebrow")}</span>

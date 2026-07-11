@@ -6,8 +6,7 @@ import { Link } from "@/i18n/routing";
 import { Logo } from "./logo";
 import { ThemeToggle } from "./theme-toggle";
 import { LanguageSwitcher } from "./language-switcher";
-import { Button } from "@/components/ui/button";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function Nav() {
@@ -58,12 +57,12 @@ export function Nav() {
         <div className="hidden items-center gap-2 md:flex">
           <LanguageSwitcher />
           <ThemeToggle />
-          <Link href="/demo">
-            <Button size="sm" className="ml-1">
-              {t("demo")}
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-          </Link>
+          <a
+            href="#launch"
+            className="ml-1 inline-flex h-9 items-center gap-2 rounded-control bg-accent px-4 text-sm font-medium text-white shadow-glow transition-all hover:-translate-y-px hover:brightness-105"
+          >
+            {t("launch")}
+          </a>
         </div>
 
         {/* Mobile controls */}
@@ -97,12 +96,13 @@ export function Nav() {
           </div>
           <div className="mt-4 flex items-center justify-between gap-3">
             <LanguageSwitcher />
-            <Link href="/demo" className="flex-1" onClick={() => setOpen(false)}>
-              <Button size="md" className="w-full">
-                {t("demo")}
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
+            <a
+              href="#launch"
+              onClick={() => setOpen(false)}
+              className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-control bg-accent px-5 text-[15px] font-medium text-white shadow-glow"
+            >
+              {t("launch")}
+            </a>
           </div>
         </div>
       )}
