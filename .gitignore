@@ -1,0 +1,28 @@
+# Dependencies
+**/node_modules
+
+# Builds / output
+**/.next
+**/out
+**/build
+**/dist
+
+# Env
+**/.env*.local
+**/.env
+
+# Logs & OS
+*.log
+.DS_Store
+Thumbs.db
+
+# Next.js generated
+**/next-env.d.ts
+
+# Deploy
+**/.vercel
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea

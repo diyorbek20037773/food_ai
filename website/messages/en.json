@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "title": "FoodGPT — What are you craving today?",
+    "description": "An AI companion for food decisions: ask in plain language and it finds the nearest, open, best-fit spot. Booking, navigation and taxi in one place."
+  },
+  "nav": {
+    "features": "Features",
+    "how": "How it works",
+    "team": "Team",
+    "contact": "Contact",
+    "demo": "See demo",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "lang": {
+    "label": "Language",
+    "uz": "Uzbek",
+    "ru": "Russian",
+    "en": "English"
+  },
+  "hero": {
+    "badge": "An AI food companion for Uzbekistan",
+    "greeting": "Good evening",
+    "title": "What are you craving today?",
+    "subtitle": "Just tell us — we'll find the nearest, open, best-fit place. Booking, navigation and taxi, all in one view.",
+    "placeholders": [
+      "I'm craving kebab...",
+      "A family spot on a 200k budget...",
+      "Where is plov ready right now?",
+      "A romantic restaurant nearby...",
+      "Lagman that's open late..."
+    ],
+    "send": "Ask",
+    "tryDemo": "Try the live demo",
+    "chips": ["🍢 Kebab", "🍚 Plov", "☕ Breakfast", "🌙 Open late"],
+    "cardStatus": "Open · ready in ~15 min",
+    "cardMeta": "1.2 km · ⭐ 4.8 · from 45,000 UZS"
+  },
+  "problem": {
+    "eyebrow": "The problem",
+    "title": "In Uzbekistan, nobody searches Google Maps for food",
+    "lead": "A hungry person isn't looking for a restaurant — they want a fast, confident decision. But no tool solves that.",
+    "oldWay": {
+      "title": "Today's way",
+      "time": "5–10 minutes · 5 apps",
+      "steps": [
+        "Search \"kebab\" on Google Maps",
+        "Hunt for menu and photos on Instagram",
+        "Dig up prices in a Telegram channel",
+        "Call to ask if a table is free",
+        "Open Yandex Go separately"
+      ]
+    },
+    "newWay": {
+      "title": "With FoodGPT",
+      "time": "30 seconds · 1 conversation",
+      "steps": [
+        "Type or speak in plain language",
+        "AI recommends the right place instantly",
+        "Live: is it open, is it ready, the wait",
+        "Reserve a table in one tap",
+        "Navigation or taxi — right there"
+      ]
+    }
+  },
+  "features": {
+    "eyebrow": "Features",
+    "title": "AI makes the food decision",
+    "subtitle": "Not menu browsing — conversation, recommendation and a clear decision.",
+    "items": [
+      {
+        "title": "Natural-language search",
+        "desc": "\"Cheap lunch\" or \"a warm place with friends\" — the AI reads your intent, no filters to fiddle with."
+      },
+      {
+        "title": "Real-time status",
+        "desc": "Is it open now, is the dish ready, how long is the wait — live data straight from restaurants."
+      },
+      {
+        "title": "One-tap booking",
+        "desc": "No phone calls. See a free table and reserve it on the spot."
+      },
+      {
+        "title": "Taxi & navigation",
+        "desc": "Walking route or Yandex Go — get to your chosen place in a single tap."
+      },
+      {
+        "title": "Personal recommendations",
+        "desc": "Learns your habits: suggests by favourite cuisine, budget and time of day."
+      },
+      {
+        "title": "Restaurant panel",
+        "desc": "Restaurants update their menu, ready dishes and free tables in real time."
+      }
+    ]
+  },
+  "how": {
+    "eyebrow": "How it works",
+    "title": "To your meal in three steps",
+    "steps": [
+      {
+        "n": "01",
+        "title": "Ask",
+        "desc": "Type or say what you feel like eating. Budget, company, mood — anything goes."
+      },
+      {
+        "n": "02",
+        "title": "AI recommends",
+        "desc": "Shows the best-fit places by your location, real-time status and taste."
+      },
+      {
+        "n": "03",
+        "title": "Book and go",
+        "desc": "Reserve a table, call a taxi or open navigation. All in one flow."
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "Team",
+    "title": "The team behind FoodGPT",
+    "subtitle": "A team that knows product, technology and the Uzbek market well.",
+    "placeholderRole": "Coming soon",
+    "note": "Team member details will be added soon."
+  },
+  "demoVideo": {
+    "eyebrow": "Demo",
+    "title": "See FoodGPT in action",
+    "subtitle": "A one-minute demo: from asking to booking.",
+    "comingSoon": "Demo video coming soon",
+    "watch": "Open the live demo"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Get in touch or partner with us",
+    "subtitle": "Restaurant owner or investor — write to us and we'll reply.",
+    "name": "Your name",
+    "namePh": "First and last name",
+    "email": "Email",
+    "emailPh": "you@email.com",
+    "message": "Message",
+    "messagePh": "Write a few words...",
+    "send": "Send message",
+    "sent": "Thank you! Your message was received.",
+    "or": "or reach us directly",
+    "emailUs": "Email us"
+  },
+  "footer": {
+    "tagline": "AI decides what to eat today.",
+    "product": "Product",
+    "company": "Company",
+    "soon": "Coming soon",
+    "tgApp": "Telegram Mini App",
+    "pwa": "PWA app",
+    "restaurantPanel": "Restaurant panel",
+    "rights": "All rights reserved.",
+    "madeIn": "Made with love in Tashkent"
+  },
+  "demo": {
+    "back": "Back to home",
+    "title": "FoodGPT — Live demo",
+    "subtitle": "Runs on sample data. Ask anything or pick a ready-made prompt.",
+    "inputPh": "What are you craving?",
+    "send": "Send",
+    "thinking": "FoodGPT is thinking",
+    "youLabel": "You",
+    "aiIntro": "Found these spots — all open now and checked in real time:",
+    "suggestions": [
+      "I'm craving kebab",
+      "A family spot on a 200k budget",
+      "Where is plov ready right now?",
+      "Recommend a romantic restaurant"
+    ],
+    "card": {
+      "open": "Open",
+      "ready": "ready",
+      "wait": "wait",
+      "min": "min",
+      "km": "km",
+      "from": "from",
+      "reserve": "Reserve",
+      "navigate": "Navigate",
+      "taxi": "Taxi"
+    },
+    "reserved": "Table reserved (demo)",
+    "disclaimer": "This is a demo — data is illustrative."
+  }
+}

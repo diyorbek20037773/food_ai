@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "title": "FoodGPT — Bugun nima yeysiz?",
+    "description": "AI hamroh: tabiiy tilda so'rang, u yaqin, ochiq va sizga mos joyni topadi. Bron, navigatsiya va taksi bitta oynada."
+  },
+  "nav": {
+    "features": "Imkoniyatlar",
+    "how": "Qanday ishlaydi",
+    "team": "Jamoa",
+    "contact": "Aloqa",
+    "demo": "Demoni ko'rish",
+    "openMenu": "Menyuni ochish",
+    "closeMenu": "Menyuni yopish"
+  },
+  "theme": {
+    "toggle": "Mavzuni almashtirish",
+    "light": "Yorug'",
+    "dark": "Qorong'i"
+  },
+  "lang": {
+    "label": "Til",
+    "uz": "O'zbekcha",
+    "ru": "Ruscha",
+    "en": "Inglizcha"
+  },
+  "hero": {
+    "badge": "O'zbekiston uchun AI ovqat hamrohi",
+    "greeting": "Xayrli kech",
+    "title": "Bugun nima yemoqchisiz?",
+    "subtitle": "Shunchaki ayting — biz eng yaqin, ochiq va sizga mos joyni topamiz. Bron qilish, navigatsiya va taksi bitta oynada.",
+    "placeholders": [
+      "Shashlik yemoqchiman...",
+      "200 ming budjetga oilaviy joy...",
+      "Hozir osh qayerda tayyor?",
+      "Yaqin atrofda romantik restoran...",
+      "Tunda ochiq lag'mon joyi..."
+    ],
+    "send": "So'rash",
+    "tryDemo": "Jonli demoni sinab ko'ring",
+    "chips": ["🍢 Shashlik", "🍚 Osh", "☕ Nonushta", "🌙 Tunda ochiq"],
+    "cardStatus": "Ochiq · ~15 daqiqada tayyor",
+    "cardMeta": "1.2 km · ⭐ 4.8 · 45 000 so'mdan"
+  },
+  "problem": {
+    "eyebrow": "Muammo",
+    "title": "O'zbekistonda hech kim Google Maps'da ovqat izlamaydi",
+    "lead": "Odam och qolganda restoran qidirmaydi — u tez va ishonchli qaror qidiradi. Ammo buni yechadigan asbob yo'q.",
+    "oldWay": {
+      "title": "Bugungi yo'l",
+      "time": "5–10 daqiqa · 5 ta ilova",
+      "steps": [
+        "Google Maps'da \"shashlik\" deb qidirish",
+        "Instagram'da menyu va rasm qidirish",
+        "Narxni Telegram kanalidan izlash",
+        "Bo'sh stol bormi deb telefon qilish",
+        "Yandex Go'ni alohida ochish"
+      ]
+    },
+    "newWay": {
+      "title": "FoodGPT bilan",
+      "time": "30 soniya · 1 ta suhbat",
+      "steps": [
+        "Tabiiy tilda yozing yoki gapiring",
+        "AI mos joyni darhol tavsiya qiladi",
+        "Real vaqtda: ochiqmi, tayyormi, navbat",
+        "Bir bosishda stol bron qiling",
+        "Navigatsiya yoki taksi — o'sha yerda"
+      ]
+    }
+  },
+  "features": {
+    "eyebrow": "Imkoniyatlar",
+    "title": "Ovqat qarorini AI hal qiladi",
+    "subtitle": "Menyu varaqlash emas — suhbat, tavsiya va aniq qaror.",
+    "items": [
+      {
+        "title": "Tabiiy tilda qidiruv",
+        "desc": "\"Arzon tushlik\" yoki \"do'stlar bilan issiq joy\" — AI niyatingizni tushunadi, filtr sozlash shart emas."
+      },
+      {
+        "title": "Real vaqtdagi holat",
+        "desc": "Hozir ochiqmi, taom tayyormi, kutish vaqti qancha — restoranlardan jonli ma'lumot."
+      },
+      {
+        "title": "Bir bosishda bron",
+        "desc": "Telefon qilib so'rash yo'q. Bo'sh stolni ko'ring va o'sha zahoti bron qiling."
+      },
+      {
+        "title": "Taksi va navigatsiya",
+        "desc": "Piyoda marshrut yoki Yandex Go — tanlagan joyingizga bir bosishda yo'l oling."
+      },
+      {
+        "title": "Shaxsiy tavsiya",
+        "desc": "Odatlaringizni o'rganadi: sevimli oshxona, budjet va vaqtga mos taklif beradi."
+      },
+      {
+        "title": "Restoran paneli",
+        "desc": "Restoranlar menyu, tayyor taomlar va bo'sh stolni real vaqtda yangilaydi."
+      }
+    ]
+  },
+  "how": {
+    "eyebrow": "Qanday ishlaydi",
+    "title": "Uch qadamda ovqatga",
+    "steps": [
+      {
+        "n": "01",
+        "title": "So'rang",
+        "desc": "Nima yemoqchi ekaningizni yozing yoki gapiring. Budjet, kompaniya, kayfiyat — hammasi mumkin."
+      },
+      {
+        "n": "02",
+        "title": "AI tavsiya beradi",
+        "desc": "Joylashuvingiz, real vaqt holati va didingizga qarab eng mos joylarni ko'rsatadi."
+      },
+      {
+        "n": "03",
+        "title": "Bron qiling va boring",
+        "desc": "Stolni bron qiling, taksi chaqiring yoki navigatsiyani oching. Bitta oqimda."
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "Jamoa",
+    "title": "FoodGPT ortidagi jamoa",
+    "subtitle": "Mahsulot, texnologiya va O'zbekiston bozorini yaxshi biladigan jamoa.",
+    "placeholderRole": "Tez orada",
+    "note": "Jamoa a'zolari ma'lumotlari tez orada qo'shiladi."
+  },
+  "demoVideo": {
+    "eyebrow": "Demo",
+    "title": "FoodGPT'ni harakatda ko'ring",
+    "subtitle": "Bir daqiqalik demo: so'rashdan bronigacha.",
+    "comingSoon": "Demo video tez orada",
+    "watch": "Jonli demoni ochish"
+  },
+  "contact": {
+    "eyebrow": "Aloqa",
+    "title": "Bog'lanish yoki hamkorlik",
+    "subtitle": "Restoran egasimisiz yoki investormisiz — yozing, javob beramiz.",
+    "name": "Ismingiz",
+    "namePh": "Ism familiya",
+    "email": "Email",
+    "emailPh": "siz@email.com",
+    "message": "Xabar",
+    "messagePh": "Bir necha so'z yozing...",
+    "send": "Xabar yuborish",
+    "sent": "Rahmat! Xabaringiz qabul qilindi.",
+    "or": "yoki to'g'ridan-to'g'ri",
+    "emailUs": "Bizga email yozing"
+  },
+  "footer": {
+    "tagline": "Bugun nima yeyishni AI hal qiladi.",
+    "product": "Mahsulot",
+    "company": "Kompaniya",
+    "soon": "Tez orada",
+    "tgApp": "Telegram Mini App",
+    "pwa": "PWA ilova",
+    "restaurantPanel": "Restoran paneli",
+    "rights": "Barcha huquqlar himoyalangan.",
+    "madeIn": "Toshkentda mehr bilan yaratilgan"
+  },
+  "demo": {
+    "back": "Bosh sahifaga qaytish",
+    "title": "FoodGPT — Jonli demo",
+    "subtitle": "Namuna ma'lumot bilan ishlaydi. Xohlagan savolni yozing yoki tayyor variantni tanlang.",
+    "inputPh": "Nima yemoqchisiz?",
+    "send": "Yuborish",
+    "thinking": "FoodGPT o'ylayapti",
+    "youLabel": "Siz",
+    "aiIntro": "Ushbu joylarni topdim — barchasi hozir ochiq va real vaqtda tekshirilgan:",
+    "suggestions": [
+      "Shashlik yemoqchiman",
+      "200 ming budjetga oilaviy joy",
+      "Hozir osh qayerda tayyor?",
+      "Romantik restoran tavsiya qil"
+    ],
+    "card": {
+      "open": "Ochiq",
+      "ready": "tayyor",
+      "wait": "kutish",
+      "min": "daq",
+      "km": "km",
+      "from": "dan",
+      "reserve": "Bron qilish",
+      "navigate": "Navigatsiya",
+      "taxi": "Taksi"
+    },
+    "reserved": "Stol bron qilindi (demo)",
+    "disclaimer": "Bu demo — ma'lumotlar namuna uchun."
+  }
+}
