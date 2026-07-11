@@ -27,8 +27,8 @@
   "hero": {
     "badge": "An AI food companion for Uzbekistan",
     "greeting": "Good evening",
-    "title": "AI decides what to eat today",
-    "subtitle": "Ask in plain language — FoodGPT finds the nearest, open, best-fit place. Booking, navigation and taxi in one flow. As a Telegram Mini App and an installable app.",
+    "title": "Your personal AI food companion",
+    "subtitle": "FoodGPT learns your habits and finds a place that fits your taste and budget. Booking, ordering, navigation and taxi — in one conversation. As a Telegram Mini App and an installable app.",
     "ctaPrimary": "Open in Telegram",
     "ctaSecondary": "PWA app",
     "soon": "Coming soon",

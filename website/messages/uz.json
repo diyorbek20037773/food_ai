@@ -27,8 +27,8 @@
   "hero": {
     "badge": "O'zbekiston uchun AI ovqat hamrohi",
     "greeting": "Xayrli kech",
-    "title": "Bugun nima yeyishni AI hal qiladi",
-    "subtitle": "Tabiiy tilda so'rang — FoodGPT eng yaqin, ochiq va sizga mos joyni topadi. Bron, navigatsiya va taksi bitta oqimda. Telegram Mini App va o'rnatiladigan ilova ko'rinishida.",
+    "title": "Ovqatlanish uchun shaxsiy AI yordamchi",
+    "subtitle": "FoodGPT odatlaringizni o'rganadi va didingiz, budjetingizga mos joyni topadi. Bron, zakaz, navigatsiya va taksi — bitta suhbatda. Telegram Mini App va o'rnatiladigan ilova ko'rinishida.",
     "ctaPrimary": "Telegram'da ochish",
     "ctaSecondary": "PWA ilova",
     "soon": "Tez orada",
