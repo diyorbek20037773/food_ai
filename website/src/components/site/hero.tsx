@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Sparkles, Star, MapPin, Send } from "lucide-react";
+import { TG_BOT_URL, PWA_URL } from "@/lib/links";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -38,21 +39,25 @@ export function Hero() {
             {t("subtitle")}
           </p>
 
-          {/* Primary CTAs — the app lives in Telegram & PWA, "soon" */}
+          {/* Primary CTAs — open the real app (Telegram bot & PWA) */}
           <div className="mt-9 flex animate-fade-up flex-col items-center justify-center gap-3 sm:flex-row [animation-delay:260ms]">
-            <span className="group relative inline-flex h-[52px] cursor-default items-center gap-2 rounded-control bg-accent px-7 text-base font-medium text-white shadow-glow">
+            <a
+              href={TG_BOT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex h-[52px] items-center gap-2 rounded-control bg-accent px-7 text-base font-medium text-white shadow-glow transition-all hover:-translate-y-px hover:brightness-105"
+            >
               <Send className="h-[18px] w-[18px]" />
               {t("ctaPrimary")}
-              <span className="ml-1 rounded-full bg-white/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide">
-                {t("soon")}
-              </span>
-            </span>
-            <span className="inline-flex h-[52px] cursor-default items-center gap-2 rounded-control border border-line-strong bg-surface px-7 text-base font-medium text-ink shadow-soft">
+            </a>
+            <a
+              href={PWA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-[52px] items-center gap-2 rounded-control border border-line-strong bg-surface px-7 text-base font-medium text-ink shadow-soft transition-all hover:-translate-y-px hover:bg-surface-2"
+            >
               {t("ctaSecondary")}
-              <span className="ml-1 rounded-full bg-surface-2 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-ink-soft">
-                {t("soon")}
-              </span>
-            </span>
+            </a>
           </div>
         </div>
 

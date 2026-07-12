@@ -220,12 +220,14 @@
   },
   "launch": {
     "eyebrow": "Get the app",
-    "title": "FoodGPT launches soon",
-    "subtitle": "The app will ship as a Telegram Mini App and an installable PWA. This site is an introduction to the project.",
+    "title": "Try FoodGPT right now",
+    "subtitle": "The app runs as a Telegram Mini App and an installable PWA. Pick one to get started.",
     "tgTitle": "Telegram Mini App",
     "tgDesc": "Opens right inside Telegram — nothing to install. The most convenient channel in Uzbekistan.",
     "pwaTitle": "PWA app",
     "pwaDesc": "Installs to your phone from the browser in one tap. Works offline too.",
+    "openTg": "Open in Telegram",
+    "openPwa": "Open the app",
     "soon": "Coming soon",
     "notify": "Notify me"
   }

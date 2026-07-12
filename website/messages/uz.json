@@ -220,12 +220,14 @@
   },
   "launch": {
     "eyebrow": "Ilovani oling",
-    "title": "FoodGPT tez orada ishga tushadi",
-    "subtitle": "Ilova Telegram Mini App va o'rnatiladigan PWA ko'rinishida bo'ladi. Bu sayt — loyiha tanishtiruvi.",
+    "title": "FoodGPT'ni hoziroq sinab ko'ring",
+    "subtitle": "Ilova Telegram Mini App va o'rnatiladigan PWA ko'rinishida ishlaydi. Quyidagidan birini tanlang.",
     "tgTitle": "Telegram Mini App",
     "tgDesc": "Telegram ichida ochiladi — o'rnatish shart emas. O'zbekistonda eng qulay kanal.",
     "pwaTitle": "PWA ilova",
     "pwaDesc": "Brauzerdan bir bosishda telefoningizga o'rnatiladi. Offline ham ishlaydi.",
+    "openTg": "Telegram'da ochish",
+    "openPwa": "Ilovani ochish",
     "soon": "Tez orada",
     "notify": "Xabar berilsin"
   }
