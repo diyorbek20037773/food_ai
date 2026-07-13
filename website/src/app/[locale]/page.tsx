@@ -12,6 +12,7 @@ import { DemoVideo } from "@/components/site/demo-video";
 import { Launch } from "@/components/site/launch";
 import { InstallGuide } from "@/components/site/install-guide";
 import { Team } from "@/components/site/team";
+import { Achievements } from "@/components/site/achievements";
 import { Contact } from "@/components/site/contact";
 import { Footer } from "@/components/site/footer";
 
@@ -39,6 +40,7 @@ export default async function Home({
         <Launch />
         <InstallGuide />
         <Team />
+        <Achievements />
         <Contact />
       </main>
       <Footer />

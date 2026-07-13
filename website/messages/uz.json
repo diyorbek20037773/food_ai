@@ -182,8 +182,30 @@
     "eyebrow": "Jamoa",
     "title": "FoodGPT ortidagi jamoa",
     "subtitle": "Mahsulot, texnologiya va O'zbekiston bozorini yaxshi biladigan jamoa.",
-    "placeholderRole": "Tez orada",
-    "note": "Jamoa a'zolari ma'lumotlari tez orada qo'shiladi."
+    "members": [
+      { "name": "Quvatova Zaxro", "role": "Asoschi · CEO", "bio": "Mahsulot va strategiya. Jamoani boshqaradi." },
+      { "name": "Sultonov Dilshod", "role": "Co-founder · Data Scientist", "bio": "AI va ma'lumotlar modellari." },
+      { "name": "Egamberganov Shohruh", "role": "Co-founder · Full-stack Developer", "bio": "Backend, ilova va infratuzilma." },
+      { "name": "Ibragimov Nodirbek", "role": "Co-founder · UI/UX Designer", "bio": "Mahsulot dizayni va tajriba." },
+      { "name": "Eshpo'latova Dilshoda", "role": "Data Analyst", "bio": "Tahlil va foydalanuvchi tadqiqoti." }
+    ]
+  },
+  "achievements": {
+    "eyebrow": "Yutuqlar",
+    "title": "Jamoamiz allaqachon isbotlagan",
+    "subtitle": "Xalqaro va milliy xakatonlarda g'oliblik — mahsulotni ishga solishdan oldin ham.",
+    "items": [
+      {
+        "place": "1-o'rin",
+        "title": "Build with AI Hackathon 2026 — EdTech",
+        "desc": "«Nova» jamoasi «Oliy ta'lim tizimini rivojlantirish» yo'nalishida 1-o'rinni egalladi. GDG, GlobalMove va vazirlik hamkorligida, 1300+ ishtirokchi orasida."
+      },
+      {
+        "place": "2-o'rin",
+        "title": "Green Tech Hackathon 2025",
+        "desc": "«FEBA» jamoasi ZeroWaste loyihasi bilan 2-o'rin — muddati o'tayotgan mahsulotlarni aniqlab, isrofni kamaytiruvchi avtomatik xizmat."
+      }
+    ]
   },
   "demoVideo": {
     "eyebrow": "Demo",
