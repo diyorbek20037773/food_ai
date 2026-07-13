@@ -19,30 +19,30 @@ export function UzCombinator() {
   return (
     <section id="uzcombinator" className="scroll-mt-24 py-20 md:py-28">
       <div className="container-x">
-        <Reveal className="relative overflow-hidden rounded-[28px] bg-ink px-6 py-14 text-center text-white md:px-12 md:py-16">
-          {/* ambient warm wash */}
+        <Reveal className="relative overflow-hidden rounded-[28px] border border-line bg-surface px-6 py-14 text-center shadow-soft-lg md:px-12 md:py-16">
+          {/* ambient warm wash — theme-agnostic (uses accent token) */}
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0"
             style={{
               background:
-                "radial-gradient(60% 55% at 50% 0%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%)",
+                "radial-gradient(60% 55% at 50% 0%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%)",
             }}
           />
 
           <div className="relative">
             <span
               className="eyebrow justify-center"
-              style={{ color: "var(--amber)" }}
+              style={{ color: "var(--accent-ink)" }}
             >
               {t("eyebrow")}
             </span>
 
-            <h2 className="mx-auto mt-4 max-w-2xl text-[clamp(1.7rem,3.6vw,2.6rem)] font-bold leading-tight">
+            <h2 className="mx-auto mt-4 max-w-2xl text-[clamp(1.7rem,3.6vw,2.6rem)] font-bold leading-tight text-ink">
               {t("title")}
             </h2>
 
-            <p className="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-white/70">
+            <p className="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-ink-soft">
               {t("subtitle")}
             </p>
 
@@ -51,9 +51,9 @@ export function UzCombinator() {
               {badges.map(({ icon: Icon, label }) => (
                 <span
                   key={label}
-                  className="inline-flex items-center gap-2 rounded-2xl border border-white/12 bg-white/5 px-4 py-2.5 text-[13px] font-medium text-white/90"
+                  className="inline-flex items-center gap-2 rounded-2xl border border-line bg-surface-2 px-4 py-2.5 text-[13px] font-medium text-ink"
                 >
-                  <Icon className="h-4 w-4 text-amber" />
+                  <Icon className="h-4 w-4 text-accent" />
                   {label}
                 </span>
               ))}
