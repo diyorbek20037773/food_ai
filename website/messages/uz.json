@@ -208,6 +208,15 @@
       }
     ]
   },
+  "uzc": {
+    "eyebrow": "UzCombinator 2026",
+    "title": "FoodGPT — UzCombinator 2026 arizasi",
+    "subtitle": "Slayd emas — ishlaydigan mahsulot. TG Mini App va PWA bugun jonli, jamoa 2 ta xakaton g'olibi.",
+    "b1": "TG Mini App + PWA jonli",
+    "b2": "2× xakaton g'olibligi",
+    "b3": "5 kishilik asoschilar jamoasi",
+    "cta": "Arizani ko'rish"
+  },
   "demoVideo": {
     "eyebrow": "Demo",
     "title": "FoodGPT'ni harakatda ko'ring",

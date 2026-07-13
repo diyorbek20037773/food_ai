@@ -208,6 +208,15 @@
       }
     ]
   },
+  "uzc": {
+    "eyebrow": "UzCombinator 2026",
+    "title": "FoodGPT — our UzCombinator 2026 application",
+    "subtitle": "Not slides — a working product. The TG Mini App and PWA are live today, and the team has won two hackathons.",
+    "b1": "TG Mini App + PWA live",
+    "b2": "2× hackathon wins",
+    "b3": "A team of 5 founders",
+    "cta": "View the application"
+  },
   "demoVideo": {
     "eyebrow": "Demo",
     "title": "See FoodGPT in action",
