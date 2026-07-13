@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
-import { Sparkles, Star, MapPin, Send } from "lucide-react";
+import { Sparkles, Star, MapPin, Send, ArrowRight } from "lucide-react";
+import { Link } from "@/i18n/routing";
 import { TG_BOT_URL, PWA_URL } from "@/lib/links";
 
 export function Hero() {
@@ -58,6 +59,17 @@ export function Hero() {
             >
               {t("ctaSecondary")}
             </a>
+          </div>
+
+          {/* UzCombinator application page link */}
+          <div className="mt-6 animate-fade-up [animation-delay:320ms]">
+            <Link
+              href="/uzcombinator"
+              className="group inline-flex items-center gap-1.5 text-sm font-medium text-accent-ink transition-colors hover:text-accent"
+            >
+              {t("yc")}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </Link>
           </div>
         </div>
 

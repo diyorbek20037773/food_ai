@@ -31,6 +31,7 @@
     "subtitle": "FoodGPT изучает ваши привычки и находит место под ваш вкус и бюджет. Бронь, заказ, навигация и такси — в одном разговоре. В виде Telegram Mini App и устанавливаемого приложения.",
     "ctaPrimary": "Открыть в Telegram",
     "ctaSecondary": "PWA-приложение",
+    "yc": "Смотрите нас для UzCombinator 2026",
     "soon": "Скоро",
     "example": "Например, вы спросите так:",
     "prompts": [
@@ -187,7 +188,7 @@
       { "name": "Султонов Дилшод", "role": "Co-founder · Data Scientist", "bio": "AI и модели данных." },
       { "name": "Эгамберганов Шохрух", "role": "Co-founder · Full-stack Developer", "bio": "Бэкенд, приложение и инфраструктура." },
       { "name": "Ибрагимов Нодирбек", "role": "Co-founder · UI/UX Designer", "bio": "Дизайн продукта и опыт." },
-      { "name": "Эшполатова Дилшода", "role": "Data Analyst", "bio": "Аналитика и исследование пользователей." }
+      { "name": "Эшполатова Дилшода", "role": "Co-founder · Data Analyst", "bio": "Аналитика и исследование пользователей." }
     ]
   },
   "achievements": {

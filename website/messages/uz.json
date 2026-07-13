@@ -31,6 +31,7 @@
     "subtitle": "FoodGPT odatlaringizni o'rganadi va didingiz, budjetingizga mos joyni topadi. Bron, zakaz, navigatsiya va taksi — bitta suhbatda. Telegram Mini App va o'rnatiladigan ilova ko'rinishida.",
     "ctaPrimary": "Telegram'da ochish",
     "ctaSecondary": "PWA ilova",
+    "yc": "UzCombinator 2026 uchun bizni ko'ring",
     "soon": "Tez orada",
     "example": "Masalan, shunday so'raysiz:",
     "prompts": [
@@ -187,7 +188,7 @@
       { "name": "Sultonov Dilshod", "role": "Co-founder · Data Scientist", "bio": "AI va ma'lumotlar modellari." },
       { "name": "Egamberganov Shohruh", "role": "Co-founder · Full-stack Developer", "bio": "Backend, ilova va infratuzilma." },
       { "name": "Ibragimov Nodirbek", "role": "Co-founder · UI/UX Designer", "bio": "Mahsulot dizayni va tajriba." },
-      { "name": "Eshpo'latova Dilshoda", "role": "Data Analyst", "bio": "Tahlil va foydalanuvchi tadqiqoti." }
+      { "name": "Eshpo'latova Dilshoda", "role": "Co-founder · Data Analyst", "bio": "Tahlil va foydalanuvchi tadqiqoti." }
     ]
   },
   "achievements": {

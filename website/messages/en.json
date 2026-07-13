@@ -31,6 +31,7 @@
     "subtitle": "FoodGPT learns your habits and finds a place that fits your taste and budget. Booking, ordering, navigation and taxi — in one conversation. As a Telegram Mini App and an installable app.",
     "ctaPrimary": "Open in Telegram",
     "ctaSecondary": "PWA app",
+    "yc": "See us for UzCombinator 2026",
     "soon": "Coming soon",
     "example": "For example, you'd ask:",
     "prompts": [
@@ -187,7 +188,7 @@
       { "name": "Dilshod Sultonov", "role": "Co-founder · Data Scientist", "bio": "AI and data models." },
       { "name": "Shohruh Egamberganov", "role": "Co-founder · Full-stack Developer", "bio": "Backend, app and infrastructure." },
       { "name": "Nodirbek Ibragimov", "role": "Co-founder · UI/UX Designer", "bio": "Product design and experience." },
-      { "name": "Dilshoda Eshpo'latova", "role": "Data Analyst", "bio": "Analytics and user research." }
+      { "name": "Dilshoda Eshpo'latova", "role": "Co-founder · Data Analyst", "bio": "Analytics and user research." }
     ]
   },
   "achievements": {
