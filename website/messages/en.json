@@ -230,5 +230,36 @@
     "openPwa": "Open the app",
     "soon": "Coming soon",
     "notify": "Notify me"
+  },
+  "install": {
+    "eyebrow": "How to install",
+    "title": "Up and running in a minute",
+    "subtitle": "Telegram is the easiest way. To install the app on your phone, follow the steps below.",
+    "tg": {
+      "title": "Via Telegram",
+      "badge": "Easiest",
+      "steps": [
+        "Open @FoodGPT_uzbot",
+        "Tap the “Open” button",
+        "Done — the app runs inside Telegram"
+      ]
+    },
+    "android": {
+      "title": "Install on Android",
+      "steps": [
+        "Open the app in the Chrome browser",
+        "Tap “Install app” (or ⋮ menu → “Add to Home screen”)",
+        "The FoodGPT icon appears on your home screen"
+      ]
+    },
+    "ios": {
+      "title": "Install on iPhone",
+      "note": "On iPhone, only the Safari browser works",
+      "steps": [
+        "Open the app in Safari",
+        "Tap the “Share” button at the bottom",
+        "Choose “Add to Home Screen” → “Add”"
+      ]
+    }
   }
 }

@@ -230,5 +230,36 @@
     "openPwa": "Ilovani ochish",
     "soon": "Tez orada",
     "notify": "Xabar berilsin"
+  },
+  "install": {
+    "eyebrow": "Qanday o'rnatiladi",
+    "title": "Bir daqiqada ishga tushiring",
+    "subtitle": "Telegram — eng oson yo'l. Ilovani telefoningizga o'rnatmoqchi bo'lsangiz — quyidagi qadamlar.",
+    "tg": {
+      "title": "Telegram orqali",
+      "badge": "Eng oson",
+      "steps": [
+        "@FoodGPT_uzbot ni oching",
+        "«Ochish» tugmasini bosing",
+        "Tayyor — ilova Telegram ichida ishlaydi"
+      ]
+    },
+    "android": {
+      "title": "Android telefonga o'rnatish",
+      "steps": [
+        "Ilovani Chrome brauzerda oching",
+        "«Ilovani o'rnatish» tugmasini bosing (yoki ⋮ menyu → «Bosh ekranga qo'shish»)",
+        "Bosh ekranda FoodGPT ikonkasi paydo bo'ladi"
+      ]
+    },
+    "ios": {
+      "title": "iPhone'ga o'rnatish",
+      "note": "iPhone'da faqat Safari brauzeri ishlaydi",
+      "steps": [
+        "Ilovani Safari'da oching",
+        "Pastdagi «Ulashish» tugmasini bosing",
+        "«Bosh ekranga qo'shish» ni tanlang → «Qo'shish»"
+      ]
+    }
   }
 }

@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FoodGPT — Taqdimot</title>
+<style>
+  :root{
+    --bg:#fbf7f2; --bg-tint:#f6efe6; --surface:#ffffff; --surface-2:#f5efe7;
+    --ink:#1a1410; --ink-soft:#6b6259; --ink-mute:#a89f94;
+    --accent:#ff6b35; --accent-ink:#d64815; --amber:#ffb703;
+    --success:#1fa855; --line:rgba(26,20,16,.10); --line-strong:rgba(26,20,16,.16);
+    --shadow:0 1px 2px rgba(38,26,16,.05), 0 18px 48px rgba(38,26,16,.10);
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ height:100%; }
+  body{
+    font-family:-apple-system,"Segoe UI",Inter,Roboto,Arial,sans-serif;
+    background:#e9e1d6; color:var(--ink);
+    display:flex; align-items:center; justify-content:center;
+    min-height:100vh; overflow:hidden; letter-spacing:-.01em;
+  }
+  /* Deck viewport = 16:9 */
+  .deck{ width:min(96vw, 170vh); aspect-ratio:16/9; position:relative; }
+  .slide{
+    position:absolute; inset:0; background:var(--bg);
+    border-radius:20px; box-shadow:var(--shadow); overflow:hidden;
+    display:none; padding:5.2% 6%;
+    animation:fade .45s ease;
+  }
+  .slide.on{ display:flex; }
+  @keyframes fade{ from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:none;} }
+
+  /* warm ambient gradients */
+  .slide::before{ content:""; position:absolute; inset:0; pointer-events:none;
+    background:
+      radial-gradient(60% 55% at 90% -5%, rgba(255,183,3,.14), transparent 60%),
+      radial-gradient(70% 60% at -5% 105%, rgba(255,107,53,.13), transparent 60%);
+  }
+  .slide > *{ position:relative; z-index:1; }
+
+  .eyebrow{ text-transform:uppercase; letter-spacing:.16em; font-size:.86rem;
+            font-weight:800; color:var(--accent); }
+  h1{ font-weight:780; letter-spacing:-.035em; line-height:1.05; text-wrap:balance; }
+  h2{ font-weight:760; letter-spacing:-.03em; line-height:1.12; text-wrap:balance; }
+  p{ color:#3a2f26; line-height:1.55; }
+  .muted{ color:var(--ink-soft); }
+
+  .num{ position:absolute; top:5.2%; right:6%; font-size:.82rem; font-weight:700;
+        color:var(--ink-mute); letter-spacing:.04em; z-index:2; }
+  .kicker{ position:absolute; top:5.2%; left:6%; display:flex; align-items:center; gap:9px; z-index:2; }
+  .kmark{ width:26px; height:26px; border-radius:8px;
+          background:linear-gradient(145deg,var(--accent),var(--amber));
+          display:flex; align-items:center; justify-content:center; color:#fff; font-size:15px;
+          box-shadow:0 5px 14px rgba(255,107,53,.32); }
+  .kname{ font-weight:750; font-size:.95rem; letter-spacing:-.02em; }
+
+  .col{ display:flex; flex-direction:column; justify-content:center; width:100%; }
+  .center{ align-items:flex-start; }
+
+  .chips{ display:flex; flex-wrap:wrap; gap:.55rem; }
+  .chip{ font-size:.8rem; font-weight:650; padding:.42rem .8rem; border-radius:999px;
+         background:var(--surface); border:1px solid var(--line-strong); color:var(--ink-soft); }
+  .chip.hot{ background:var(--accent); color:#fff; border-color:transparent; }
+
+  .cards{ display:grid; gap:1rem; width:100%; }
+  .c2{ grid-template-columns:1fr 1fr; } .c3{ grid-template-columns:1fr 1fr 1fr; }
+  .card{ background:var(--surface); border:1px solid var(--line); border-radius:16px;
+         padding:1.2rem 1.3rem; box-shadow:0 1px 2px rgba(38,26,16,.04); }
+  .card .ic{ font-size:1.6rem; }
+  .card h3{ font-size:1.05rem; font-weight:720; margin:.5rem 0 .35rem; letter-spacing:-.02em; }
+  .card p{ font-size:.9rem; color:var(--ink-soft); line-height:1.5; }
+
+  .big{ display:flex; gap:2.4rem; flex-wrap:wrap; }
+  .stat .v{ font-size:2.9rem; font-weight:800; letter-spacing:-.04em;
+            background:linear-gradient(120deg,var(--accent),var(--amber));
+            -webkit-background-clip:text; background-clip:text; color:transparent;
+            font-variant-numeric:tabular-nums; line-height:1; }
+  .stat .l{ font-size:.9rem; color:var(--ink-soft); margin-top:.4rem; max-width:20ch; }
+
+  ul.clean{ list-style:none; display:flex; flex-direction:column; gap:.75rem; }
+  ul.clean li{ display:flex; gap:.7rem; align-items:flex-start; font-size:1.02rem; color:#332a22; }
+  ul.clean li::before{ content:"→"; color:var(--accent); font-weight:800; margin-top:1px; }
+
+  .flow{ display:flex; align-items:stretch; gap:.6rem; width:100%; }
+  .step{ flex:1; background:var(--surface); border:1px solid var(--line); border-radius:14px;
+         padding:1rem; text-align:center; }
+  .step .n{ width:30px; height:30px; margin:0 auto .6rem; border-radius:50%;
+            background:var(--accent); color:#fff; font-weight:800; font-size:.9rem;
+            display:flex; align-items:center; justify-content:center; }
+  .step h4{ font-size:.92rem; font-weight:700; margin-bottom:.25rem; }
+  .step p{ font-size:.78rem; color:var(--ink-soft); }
+  .arrow{ display:flex; align-items:center; color:var(--accent); font-size:1.4rem; font-weight:800; }
+
+  table.fin{ width:100%; border-collapse:collapse; margin-top:.6rem; }
+  table.fin th,table.fin td{ text-align:left; padding:.6rem .7rem; border-bottom:1px solid var(--line); font-size:.92rem; }
+  table.fin th{ font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-mute); font-weight:800; }
+  table.fin td.n{ font-variant-numeric:tabular-nums; font-weight:700; text-align:right; }
+  table.fin td.acc{ color:var(--accent-ink); font-weight:750; }
+
+  .ask{ background:linear-gradient(135deg, var(--accent), var(--amber)); color:#fff;
+        border-radius:18px; padding:2rem 2.2rem; box-shadow:0 18px 40px rgba(255,107,53,.32); }
+  .ask .v{ font-size:3.2rem; font-weight:820; letter-spacing:-.04em; line-height:1; }
+
+  .ph{ color:var(--accent-ink); font-weight:750; background:rgba(255,107,53,.10);
+       padding:.03em .35em; border-radius:5px; }
+
+  .split{ display:grid; grid-template-columns:1fr 1fr; gap:2rem; width:100%; align-items:center; }
+  .vs{ position:relative; }
+  .vs .row{ display:flex; justify-content:space-between; padding:.55rem 0; border-bottom:1px solid var(--line); font-size:.95rem; }
+  .vs .row span:first-child{ color:var(--ink-soft); }
+  .vs .yes{ color:var(--success); font-weight:750; } .vs .no{ color:var(--ink-mute); }
+
+  .team{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem; width:100%; }
+  .person{ text-align:center; }
+  .ava{ width:74px; height:74px; border-radius:50%; margin:0 auto .6rem;
+        background:linear-gradient(145deg, var(--surface-2), var(--bg-tint));
+        border:1px solid var(--line-strong);
+        display:flex; align-items:center; justify-content:center; font-size:2rem; }
+  .person h4{ font-size:1rem; font-weight:720; }
+  .person p{ font-size:.82rem; color:var(--ink-soft); }
+
+  /* progress + controls */
+  .bar{ position:absolute; left:0; bottom:0; height:4px; background:var(--accent);
+        border-radius:0 4px 4px 0; transition:width .35s ease; z-index:3; }
+  .ctrl{ position:fixed; bottom:16px; left:50%; transform:translateX(-50%);
+         display:flex; gap:10px; align-items:center; z-index:20;
+         background:rgba(255,255,255,.85); backdrop-filter:blur(8px);
+         border:1px solid var(--line-strong); border-radius:999px; padding:6px 8px; box-shadow:var(--shadow); }
+  .ctrl button{ border:none; background:var(--surface-2); color:var(--ink); width:34px; height:34px;
+                border-radius:50%; font-size:1rem; cursor:pointer; font-weight:700; }
+  .ctrl button:hover{ background:var(--accent); color:#fff; }
+  .ctrl .idx{ font-size:.85rem; font-weight:700; color:var(--ink-soft); min-width:52px; text-align:center; font-variant-numeric:tabular-nums; }
+  .hint{ position:fixed; top:14px; right:16px; font-size:.72rem; color:#8a8072; z-index:20; }
+
+  @media print{
+    body{ background:#fff; display:block; }
+    .deck{ width:100%; aspect-ratio:auto; }
+    .slide{ display:flex !important; position:relative; inset:auto;
+            width:100%; aspect-ratio:16/9; page-break-after:always; border-radius:0; box-shadow:none; margin:0; }
+    .ctrl,.hint,.bar{ display:none !important; }
+    @page{ size:landscape; margin:0; }
+  }
+</style>
+</head>
+<body>
+<div class="hint">← → yoki bo'sh joy · F = fullscreen</div>
+
+<div class="deck" id="deck">
+
+  <!-- 0 TITLE -->
+  <section class="slide on">
+    <div class="col center" style="gap:1.4rem">
+      <div class="kicker" style="position:relative;top:auto;left:auto"><div class="kmark" style="width:40px;height:40px;font-size:22px;border-radius:12px">🍽️</div><span class="kname" style="font-size:1.6rem">FoodGPT</span></div>
+      <div class="eyebrow">Pitch deck · 2026</div>
+      <h1 style="font-size:3.6rem; max-width:20ch">«Bugun nima yeyman?» — bir savol, bir javob.</h1>
+      <p class="muted" style="font-size:1.2rem; max-width:46ch">AI orqali yaqin, ochiq va sizga mos restoranni topadi — bron, navigatsiya, taxi bir oqimda. O'zbekiston uchun.</p>
+      <div class="chips" style="margin-top:.4rem">
+        <span class="chip hot">Restoran discovery + bron infratuzilmasi</span>
+        <span class="chip">Toshkent · O'zbekiston</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1 MUAMMO -->
+  <section class="slide">
+    <div class="kicker"><div class="kmark">🍽️</div><span class="kname">FoodGPT</span></div>
+    <span class="num">01 · Muammo</span>
+    <div class="col">
+      <div class="eyebrow">Muammo</div>
+      <h2 style="font-size:2.6rem; max-width:24ch; margin:.5rem 0 1.6rem">Och qolganda — qayerda, nima, aynan hozir tayyor? Hech kim bilmaydi.</h2>
+      <div class="cards c3">
+        <div class="card"><div class="ic">🗺️</div><h3>Platforma yo'q</h3><p>O'zbekistonda barcha restoranlarni birlashtirgan yagona joy yo'q. Odam Google Maps'ga kirib ovqat izlamaydi.</p></div>
+        <div class="card"><div class="ic">⏱️</div><h3>Vaqt yo'qoladi</h3><p>Ochiqmi? Joy bormi? Narxi? Har birini alohida tekshirish — 10+ daqiqa telefon va guruhlarda.</p></div>
+        <div class="card"><div class="ic">🤷</div><h3>Qaror og'ir</h3><p>«Qayerga boramiz?» — kompaniya, budjet, kayfiyatga mos joyni tanlash doim bahs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 YECHIM -->
+  <section class="slide">
+    <div class="kicker"><div class="kmark">🍽️</div><span class="kname">FoodGPT</span></div>
+    <span class="num">02 · Yechim</span>
+    <div class="col">
+      <div class="eyebrow">Yechim</div>
+      <h2 style="font-size:2.5rem; max-width:26ch; margin:.5rem 0 1.4rem">Tabiiy tilda so'rang — AI 30 soniyada hal qiladi.</h2>
+      <div class="cards c2" style="margin-bottom:1.2rem">
+        <div class="card" style="background:linear-gradient(135deg,#fff,#fff7f0)">
+          <p class="muted" style="font-size:.82rem">Foydalanuvchi yozadi / gapiradi:</p>
+          <h3 style="color:var(--accent-ink); font-size:1.15rem">«200 ming budjetga oilaviy joy»</h3>
+          <h3 style="color:var(--accent-ink); font-size:1.15rem; margin-top:.2rem">«Shashlik yemoqchiman»</h3>
+        </div>
+        <div class="card">
+          <p style="font-size:.95rem">AI niyatni tushunadi (taom · budjet · kayfiyat · kompaniya · vaqt) → yaqin, ochiq, mos joylarni topadi → <strong>bron · navigatsiya · taxi</strong> bir oqimda.</p>
+        </div>
+      </div>
+      <div class="chips">
+        <span class="chip hot">Matn yoki ovoz</span><span class="chip">uz · ru · en</span>
+        <span class="chip">Real-time holat</span><span class="chip">Bron bir bosishda</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 NIMA UCHUN HOZIR -->
+  <section class="slide">
+    <div class="kicker"><div class="kmark">🍽️</div><span class="kname">FoodGPT</span></div>
+    <span class="num">03 · Nima uchun hozir</span>
+    <div class="col">
+      <div class="eyebrow">Nima uchun aynan hozir</div>
+      <h2 style="font-size:2.5rem; max-width:24ch; margin:.5rem 0 1.4rem">Bozor, texnologiya va odat — uchalasi bir vaqtda pishdi.</h2>
+      <div class="cards c3">
+        <div class="card"><div class="ic">📱</div><h3>Telegram dominant</h3><p>O'zbekistonda TG — asosiy super-ilova. Mini App orqali millionlab foydalanuvchiga bir bosishda kirish.</p></div>
+        <div class="card"><div class="ic">🤖</div><h3>AI arzonlashdi</h3><p>Gemini kabi modellar tabiiy tilni uz/ru/en tushunadi — bir yil oldin bu narx/sifatda imkonsiz edi.</p></div>
+        <div class="card"><div class="ic">💳</div><h3>Digital odat</h3><p>Payme/Click, online bron, taksi ilovalari — foydalanuvchi allaqachon tayyor. Bo'shliq — ovqatda.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 BOZOR HAJMI -->
+  <section class="slide">
+    <div class="kicker"><div class="kmark">🍽️</div><span class="kname">FoodGPT</span></div>
+    <span class="num">04 · Bozor hajmi</span>
+    <div class="col">
+      <div class="eyebrow">Bozor hajmi <span class="ph">taxminiy</span></div>
+      <h2 style="font-size:2.4rem; margin:.5rem 0 1.6rem">O'sib borayotgan, hali egallanmagan bozor</h2>
+      <div class="big" style="margin-bottom:1.4rem">
+        <div class="stat"><div class="v">$2.5B+</div><div class="l">O'zbekiston restoran/HoReCa bozori (TAM) <span class="ph">taxminiy</span></div></div>
+        <div class="stat"><div class="v">30K+</div><div class="l">Restoran, kafe, choyxona (SAM) <span class="ph">taxminiy</span></div></div>
+        <div class="stat"><div class="v">$40M</div><div class="l">3 yilda erishsa bo'ladigan (SOM) <span class="ph">taxminiy</span></div></div>
+      </div>
+      <p class="muted" style="font-size:.95rem; max-width:70ch">O'zbekiston aholisi 37M+, o'rta sinf va tashqarida ovqatlanish tez o'smoqda. Toshkentda boshlaymiz → yirik shaharlarga (Samarqand, Buxoro, Farg'ona) kengayamiz.</p>
+    </div>
+  </section>
+
+  <!-- 5 RAQOBAT -->
+  <section class="slide">
+    <div class="kicker"><div class="kmark">🍽️</div><span class="kname">FoodGPT</span></div>
+    <span class="num">05 · Raqobat</span>
+    <div class="col">
+      <div class="eyebrow">Raqobat va bizning ustunligimiz</div>
+      <h2 style="font-size:2.4rem; margin:.5rem 0 1.2rem">Discovery + bron bo'shlig'ini hech kim to'ldirmagan</h2>
+      <div class="split">
+        <div class="vs card" style="padding:1.3rem 1.5rem">
+          <div class="row"><span>Yandex Eats / Uzum Tezkor</span><span class="no">Delivery</span></div>
+          <div class="row"><span>Google Maps</span><span class="no">Xarita, ovqat emas</span></div>
+          <div class="row"><span>Instagram / TG guruhlar</span><span class="no">Tartibsiz</span></div>
+          <div class="row"><span style="font-weight:750;color:var(--accent-ink)">FoodGPT</span><span class="yes">AI + bron + real data</span></div>
+        </div>
+        <div>
+          <h3 style="font-weight:730; font-size:1.15rem; margin-bottom:.6rem">Bizning moat (himoya)</h3>
+          <ul class="clean" style="font-size:.95rem; gap:.55rem">
+            <li>Real-time restoran <strong>data + bron infratuzilmasi</strong> (OpenTable yo'li)</li>
+            <li>AI — eshik, <strong>data — uy</strong>. Ko'chirib bo'lmaydi</li>
+            <li>Biz «yana bir delivery» EMASmiz — discovery bizniki, dastavka hamkor</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 MAHSULOT -->
+  <section class="slide">
+    <div class="kicker"><div class="kmark">🍽️</div><span class="kname">FoodGPT</span></div>
+    <span class="num">06 · Mahsulot</span>
+    <div class="col">
+      <div class="eyebrow">Mahsulot — qanday ishlaydi</div>
+      <h2 style="font-size:2.3rem; margin:.5rem 0 1.3rem">Lokatsiya → so'rov → tavsiya → amal</h2>
+      <div class="flow" style="margin-bottom:1.2rem">
+        <div class="step"><div class="n">1</div><h4>Lokatsiya</h4><p>TG/geolokatsiya bilan koordinata</p></div>
+        <div class="arrow">→</div>
+        <div class="step"><div class="n">2</div><h4>So'rov</h4><p>Matn yoki ovoz — tabiiy til</p></div>
+        <div class="arrow">→</div>
+        <div class="step"><div class="n">3</div><h4>AI + Geo</h4><p>Niyat + yaqin, ochiq, mos joylar</p></div>
+        <div class="arrow">→</div>
+        <div class="step"><div class="n">4</div><h4>Amal</h4><p>Bron · zakaz · navigatsiya · taxi</p></div>
+      </div>
+      <div class="chips">
+        <span class="chip hot">Telegram Mini App</span><span class="chip hot">PWA</span>
+        <span class="chip">Gemini AI</span><span class="chip">Voice (realtime + STT/TTS)</span>
+        <span class="chip">Website ✅ tayyor</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 BIZNES MODEL -->
+  <section class="slide">
+    <div class="kicker"><div class="kmark">🍽️</div><span class="kname">FoodGPT</span></div>
+    <span class="num">07 · Biznes model</span>
+    <div class="col">
+      <div class="eyebrow">Biznes model <span class="ph">taxminiy</span></div>
+      <h2 style="font-size:2.3rem; margin:.5rem 0 1.2rem">Restorandan komissiya, foydalanuvchiga bepul</h2>
+      <div class="cards c3">
+        <div class="card"><div class="ic">🍽️</div><h3>Bron komissiya</h3><p>Har muvaffaqiyatli bron/zakaz uchun restorandan <strong><span class="ph">3–8%</span></strong> yoki fiks to'lov.</p></div>
+        <div class="card"><div class="ic">⭐</div><h3>Premium listing</h3><p>Restoranlar uchun oylik obuna — yuqori ko'rinish, analitika, promo. <span class="ph">$30–100/oy</span>.</p></div>
+        <div class="card"><div class="ic">📊</div><h3>Data & B2B</h3><p>Keyin: POS integratsiya, talab analitikasi, reklama. Yuqori marjali qatlam.</p></div>
+      </div>
+      <p class="muted" style="font-size:.92rem; margin-top:1rem">Dastavka — hamkor kuryer (Yandex/Uzum) orqali. Biz og'ir logistikaga kirmaymiz — <strong>zakaz + data bizda</strong>, yetkazish hamkorda.</p>
+    </div>
+  </section>
+
+  <!-- 8 JAMOA -->
+  <section class="slide">
+    <div class="kicker"><div class="kmark">🍽️</div><span class="kname">FoodGPT</span></div>
+    <span class="num">08 · Jamoa</span>
+    <div class="col">
+      <div class="eyebrow">Jamoa <span class="ph">to'ldiring</span></div>
+      <h2 style="font-size:2.3rem; margin:.5rem 0 1.6rem">Mahsulot, texnologiya va bozorni biladigan jamoa</h2>
+      <div class="team">
+        <div class="person"><div class="ava">👤</div><h4><span class="ph">Ism Familiya</span></h4><p>Asoschi · CEO<br>Mahsulot &amp; strategiya</p></div>
+        <div class="person"><div class="ava">👤</div><h4><span class="ph">Ism Familiya</span></h4><p>CTO · Muhandislik<br>AI · backend · mijozlar</p></div>
+        <div class="person"><div class="ava">👤</div><h4><span class="ph">Ism Familiya</span></h4><p>COO · Operatsiya<br>Restoran onboarding</p></div>
+      </div>
+      <p class="muted" style="font-size:.9rem; margin-top:1.4rem; text-align:center; width:100%">Ismlar, rollar va tajribani o'zingiz to'ldirasiz — bu slayd shablon.</p>
+    </div>
+  </section>
+
+  <!-- 9 MOLIYA -->
+  <section class="slide">
+    <div class="kicker"><div class="kmark">🍽️</div><span class="kname">FoodGPT</span></div>
+    <span class="num">09 · Moliya</span>
+    <div class="col">
+      <div class="eyebrow">Moliyaviy prognoz <span class="ph">taxminiy</span></div>
+      <h2 style="font-size:2.2rem; margin:.5rem 0 .6rem">3 yillik reja</h2>
+      <table class="fin">
+        <thead><tr><th>Ko'rsatkich</th><th style="text-align:right">1-yil</th><th style="text-align:right">2-yil</th><th style="text-align:right">3-yil</th></tr></thead>
+        <tbody>
+          <tr><td>Restoranlar (hamkor)</td><td class="n">300</td><td class="n">1 500</td><td class="n">5 000</td></tr>
+          <tr><td>Faol foydalanuvchi (oylik)</td><td class="n">25K</td><td class="n">150K</td><td class="n">600K</td></tr>
+          <tr><td>Bron/zakaz (oylik)</td><td class="n">15K</td><td class="n">120K</td><td class="n">550K</td></tr>
+          <tr><td class="acc">Daromad (yillik)</td><td class="n acc">$0.1M</td><td class="n acc">$1.2M</td><td class="n acc">$6M</td></tr>
+        </tbody>
+      </table>
+      <p class="muted" style="font-size:.85rem; margin-top:.8rem">Barcha raqamlar <span class="ph">taxminiy</span> — real modelingizga moslashtiring. Toshkent → yirik shaharlar kengayishiga asoslangan.</p>
+    </div>
+  </section>
+
+  <!-- 10 SARMOYA SO'ROVI -->
+  <section class="slide">
+    <div class="kicker"><div class="kmark">🍽️</div><span class="kname">FoodGPT</span></div>
+    <span class="num">10 · Sarmoya so'rovi</span>
+    <div class="split" style="height:100%">
+      <div class="col">
+        <div class="eyebrow">Sarmoya so'rovi <span class="ph">taxminiy</span></div>
+        <h2 style="font-size:2.2rem; margin:.5rem 0 1rem">Seed raundni ochamiz</h2>
+        <p class="muted" style="font-size:1rem; margin-bottom:1.2rem">18 oylik yo'lni moliyalashtirish: backend + mijozlar, restoran onboarding, jamoa va Toshkentda ishga tushirish.</p>
+        <ul class="clean" style="font-size:.98rem">
+          <li><strong>45%</strong> — mahsulot &amp; muhandislik</li>
+          <li><strong>30%</strong> — restoran onboarding (sales/ops)</li>
+          <li><strong>15%</strong> — marketing &amp; o'sish</li>
+          <li><strong>10%</strong> — operatsiya &amp; zaxira</li>
+        </ul>
+      </div>
+      <div class="col" style="align-items:center">
+        <div class="ask" style="text-align:center; width:100%">
+          <p style="opacity:.9; font-weight:650; letter-spacing:.04em">SO'RALAYOTGAN</p>
+          <div class="v"><span class="ph" style="background:rgba(255,255,255,.2); color:#fff">$500K</span></div>
+          <p style="opacity:.92; margin-top:.5rem">Seed · 18 oy runway</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 YOPILISH -->
+  <section class="slide">
+    <div class="col center" style="gap:1.2rem">
+      <div class="kicker" style="position:relative;top:auto;left:auto"><div class="kmark" style="width:40px;height:40px;font-size:22px;border-radius:12px">🍽️</div><span class="kname" style="font-size:1.5rem">FoodGPT</span></div>
+      <h1 style="font-size:3rem; max-width:22ch">Ovqat qaroriga AI hamroh. O'zbekistondan boshlaymiz.</h1>
+      <p class="muted" style="font-size:1.15rem; max-width:44ch">Discovery + bron infratuzilmasini biz quramiz. Keling, birga.</p>
+      <div class="chips" style="margin-top:.6rem">
+        <span class="chip hot">Rahmat</span>
+        <span class="chip"><span class="ph">email@foodgpt.uz</span></span>
+        <span class="chip"><span class="ph">@FoodGPTBot</span></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="bar" id="bar"></div>
+</div>
+
+<div class="ctrl">
+  <button id="prev" aria-label="Oldingi">‹</button>
+  <span class="idx" id="idx">1 / 12</span>
+  <button id="next" aria-label="Keyingi">›</button>
+</div>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+  const bar=document.getElementById('bar'), idx=document.getElementById('idx');
+  function show(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('on',k===i));
+    bar.style.width=((i+1)/slides.length*100)+'%';
+    idx.textContent=(i+1)+' / '+slides.length;
+  }
+  document.getElementById('next').onclick=()=>show(i+1);
+  document.getElementById('prev').onclick=()=>show(i-1);
+  addEventListener('keydown',e=>{
+    if(['ArrowRight',' ','PageDown'].includes(e.key)){e.preventDefault();show(i+1);}
+    else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(i-1);}
+    else if(e.key==='Home')show(0);
+    else if(e.key==='End')show(slides.length-1);
+    else if(e.key.toLowerCase()==='f'){ if(!document.fullscreenElement)document.documentElement.requestFullscreen(); else document.exitFullscreen(); }
+  });
+  show(0);
+</script>
+</body>
+</html>

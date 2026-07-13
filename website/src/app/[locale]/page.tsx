@@ -10,6 +10,7 @@ import { UseCases } from "@/components/site/use-cases";
 import { ForRestaurants } from "@/components/site/for-restaurants";
 import { DemoVideo } from "@/components/site/demo-video";
 import { Launch } from "@/components/site/launch";
+import { InstallGuide } from "@/components/site/install-guide";
 import { Team } from "@/components/site/team";
 import { Contact } from "@/components/site/contact";
 import { Footer } from "@/components/site/footer";
@@ -36,6 +37,7 @@ export default async function Home({
         <ForRestaurants />
         <DemoVideo />
         <Launch />
+        <InstallGuide />
         <Team />
         <Contact />
       </main>
