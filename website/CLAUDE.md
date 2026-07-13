@@ -7,25 +7,37 @@
 
 ## 1. Loyiha nima
 
-**FoodGPT** — AI orqali «bugun nima yeyman?» savolini hal qiluvchi O'zbekiston restoran
-platformasi. Foydalanuvchi tabiiy tilda ("shashlik yemoqchiman", "200 ming budjetga
-oilaviy joy") yozadi yoki gapiradi → AI yaqin, ochiq, mos joyni topadi → **bron**,
-**navigatsiya**, **taxi** bir oqimda.
+**FoodGPT** — AI orqali «bugun nima yeyman?» savolini hal qiluvchi O'zbekiston
+**ovqatlanish joylari** platformasi (restoran, kafe, choyxona — kengroq). Foydalanuvchi
+tabiiy tilda yozadi/gapiradi → AI yaqin, ochiq, mos joyni topadi → **bron**, **zakaz +
+yetkazish**, **navigatsiya**, **taxi** bir oqimda.
 
 **Strategik pozitsiya (muhim):** bu «AI restoran qidiruvi» EMAS. Yadro qiymat va
-himoya (moat) — **restoranlarning real-time data + bron infratuzilmasi** (OpenTable
-yo'li). AI — eshik, data — uy. UI/copy shuni aks ettirishi kerak: suhbat, tavsiya,
-qaror — menyu ko'rish emas.
+himoya (moat) — **ovqatlanish joylarining real-time data + bron infratuzilmasi**
+(OpenTable yo'li). AI — eshik, data — uy.
+
+**So'z tanlash (MUHIM):** «restoran» EMAS → **«ovqatlanish joylari»** (uz) · **«заведения»**
+(ru) · **«venues / places to eat»** (en). Restoran tor doira.
+
+**Delivery modeli:** zakaz + to'lov FoodGPT'da (bizning yadro), **yetkazish esa
+ovqatlanish joyi yoki hamkor kuryer** orqali — FoodGPT o'zi yetkazmaydi.
 
 **Insayt:** O'zbekistonda odam Google Maps'ga kirib ovqat izlamaydi — bu bo'shliqni
 FoodGPT to'ldiradi.
 
-### Roadmap
-- **1-bosqich (HOZIR):** Marketing website — landing + foydalanuvchi AI-chat demo.
-- **Keyin:** Telegram Mini App · PWA · restoran B2B dashboard · real POS integratsiya.
+### Holat va roadmap
+- **Website ✅ QURILGAN va DEPLOY.** Info-only marketing sayt (chat/ilova EMAS — u
+  alohida repoda: `food_gpttgminiapppwa`). `/demo` sahifasi O'CHIRILGAN.
+- **Ilova ✅ ISHLAYDI:** Telegram Mini App = PWA (bitta React + FastAPI), alohida repo
+  `github.com/diyorbek20037773/food_gpttgminiapppwa`. Website'dan havola qilinadi:
+  TG bot `t.me/FoodGPT_uzbot`, PWA Railway domeni (`src/lib/links.ts`).
+- **Keyin:** ovqatlanish joylari uchun B2B dashboard, real POS integratsiya.
 
-Website bo'limlari: muammo→yechim, funksiyalar, qanday ishlaydi, jamoa, demo video
-(placeholder), kontaktlar. **Delivery ilova EMAS — AI hamroh.**
+**Website bo'limlari (hozirgi):** Hero (app CTA + YC havola) · Muammo→Yechim · Funksiyalar
+· Qanday ishlaydi · Demo video (placeholder) · Statistika · Kim uchun (use-case) ·
+Texnologiya · Ovqatlanish joylari uchun (B2B) · Launch (TG/PWA havola) · **Qanday
+o'rnatiladi** (TG/Android/iOS) · **Jamoa** (5 real a'zo, rasm) · **Yutuqlar** (2 xakaton)
+· Aloqa · Footer. Alohida sahifa: **`/uzcombinator`** (YC arizasi).
 
 ---
 
@@ -134,20 +146,25 @@ src/
   app/
     [locale]/
       layout.tsx                     # <html lang>, theme+intl provider, font
-      page.tsx                       # LANDING
-      demo/page.tsx                  # AI-CHAT DEMO
-    globals.css                      # tokenlar + base
+      page.tsx                       # LANDING (barcha bo'limlar shu yerda)
+      uzcombinator/page.tsx          # YC ARIZA SAHIFASI (standalone)
+    globals.css                      # tokenlar + base (iliq krem + warm-canvas)
   components/
-    ui/                              # button, card, input, badge (shadcn uslubi)
-    site/                            # Nav, Hero, ProblemSolution, Features,
-                                     #   HowItWorks, Team, DemoVideo, Contact, Footer,
-                                     #   LanguageSwitcher, ThemeToggle, Logo
-    demo/                            # ChatDemo, RestaurantCard, TypingIndicator
+    ui/                              # button, card, badge
+    site/                            # Nav, Hero, ProblemSolution, Features, HowItWorks,
+                                     #   Stats, UseCases, Tech, ForRestaurants, DemoVideo,
+                                     #   Launch, InstallGuide, Team, Achievements, Contact,
+                                     #   Footer, LanguageSwitcher, ThemeToggle, Logo, Reveal
   lib/
     utils.ts                         # cn()
-    mock.ts                          # demo mock data
-public/                              # logo.svg, og-image, favicon
+    links.ts                         # TG_BOT_URL, PWA_URL (jonli app havolalar)
+public/
+  team/*.jpg  achievements/*.jpg     # jamoa va yutuq rasmlari
+  favicon.svg
 ```
+
+> `/demo` sahifa va `components/demo/`, `lib/mock.ts` OLIB TASHLANGAN — chat/ilova
+> alohida repoda (`food_gpttgminiapppwa`). Website faqat ma'lumot.
 
 ---
 

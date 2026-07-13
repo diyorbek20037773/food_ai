@@ -21,41 +21,36 @@ FoodGPT to'ldiradi.
 
 ---
 
-## 2. Repo tuzilishi (monorepo)
+## 2. Repo tuzilishi — IKKI ALOHIDA REPO (yangilangan)
 
-Bitta repo, to'rtta mustaqil loyiha (uch mijoz + bitta backend):
+Dastlab monorepo rejalashtirilgandi, lekin amalda **ikki mustaqil GitHub repo** qurildi:
 
+| Repo | Nima | Holat |
+|------|------|-------|
+| **`food_ai`** (`github.com/diyorbek20037773/food_ai`) — SHU repo | Marketing **website** (Next.js). Info-only, chat/ilova YO'Q. | ✅ Qurilgan, deploy |
+| **`food_gpttgminiapppwa`** (`github.com/diyorbek20037773/food_gpttgminiapppwa`) | **Ilova:** Telegram Mini App = PWA (bitta React frontend + FastAPI backend, bitta server). | ✅ Ishlaydi, deploy |
+
+Bu `food_ai` repo tuzilishi (website):
 ```
-food_ai/
-├── CLAUDE.md          # SHU FAYL — root yo'riqnoma
-├── README.md          # loyiha tavsifi
-├── .gitignore         # umumiy ignore (barcha subprojectlar uchun)
-├── website/           # ✅ QURILGAN — marketing sayt (Next.js)
-│   └── CLAUDE.md       #    website qoidalari
-├── backend/           # 📋 REJALASHTIRILGAN — umumiy API server (Node+Fastify)
-│   ├── CLAUDE.md       #    backend qoidalari (Gemini, voice, geo)
-│   └── PLAN.md         #    implementatsiya rejasi
-├── tg-mini-app/       # 📋 REJALASHTIRILGAN — Telegram Mini App
-│   ├── CLAUDE.md       #    tg-mini-app qoidalari
-│   └── PLAN.md         #    implementatsiya rejasi
-└── pwa/               # 📋 REJALASHTIRILGAN — Progressive Web App
-    ├── CLAUDE.md       #    pwa qoidalari
-    └── PLAN.md         #    implementatsiya rejasi
+food_ai/  (= restaurant_ai lokal papka)
+├── CLAUDE.md          # SHU FAYL
+├── README.md
+├── website/           # ✅ Next.js marketing sayt — CLAUDE.md o'sha yerda
+└── founders/          # jamoa rasmlari + YC template (manba; website/public'ga ko'chirilgan)
 ```
 
-**Holat:**
-| Loyiha | Nima | Holat |
-|--------|------|-------|
-| `website/` | Marketing sayt: g'oya, muammo/yechim, imkoniyatlar, demo, aloqa | ✅ Tayyor |
-| `backend/` | Umumiy API: Gemini AI, voice (STT/TTS+realtime), geo-qidiruv, restoran DB | 📋 Plan bor, kod yo'q |
-| `tg-mini-app/` | Telegram ichida ishlaydigan asosiy iste'molchi ilova | 📋 Plan bor, kod yo'q |
-| `pwa/` | O'rnatiladigan veb-ilova (offline, push, home-screen) | 📋 Plan bor, kod yo'q |
+> **Eskirgan papkalar:** `backend/`, `tg-mini-app/`, `pwa/` (CLAUDE.md + PLAN.md) — bu
+> lokal papkada hali bor, lekin **ular reja edi**. Haqiqiy ilova va backend
+> `food_gpttgminiapppwa` repoda qurildi (Node+Fastify emas — **Python+FastAPI**,
+> TG=PWA bitta frontend). Yangi ish uchun o'sha repo va uning CLAUDE.md'siga qarang.
 
-Har biri o'z `package.json`, `node_modules`, dev serveri bilan **mustaqil**.
-Root'da monorepo asbobi (turbo/nx) YO'Q — oddiy papkalar, kerak bo'lsa keyin qo'shiladi.
+**Ilova arxitekturasi (qisqacha):** TG Mini App va PWA = bir xil React frontend
+(`window.Telegram` bo'lsa TG rejim, bo'lmasa PWA). Bitta FastAPI process: API + TG bot
+(polling) + frontend serve + admin. Gemini AI, ovoz (pipeline), geo, auth (parolsiz),
+bron/zakaz. Batafsil: `food_gpttgminiapppwa/CLAUDE.md`.
 
-**Mijoz → backend:** `tg-mini-app` va `pwa` bir xil `backend` API'ni ishlatadi
-(bitta AI/voice/geo mantiqi, ikki mijoz). `website` — statik marketing, backend'siz.
+**Website ↔ ilova:** website statik marketing (backend'siz); ilovaga havola qiladi
+(`website/src/lib/links.ts` → TG bot + PWA URL). Ilova alohida repoda mustaqil ishlaydi.
 
 ---
 
@@ -124,7 +119,8 @@ Mijoz: yaqin joylar ro'yxati (masofa/narx/holat)
 - **Free token cheklovi:** limit/xatolikda voice fallback'ga o'tadi, matn baribir ishlaydi
   (voice — qulaylik, majburiy emas). Grasefully degrade.
 
-Backend tafsilotlari: `backend/CLAUDE.md`. Mijoz ulanishi: har mijozning CLAUDE.md.
+Batafsil (haqiqiy kod): `food_gpttgminiapppwa/backend/CLAUDE.md` va
+`food_gpttgminiapppwa/frontend/CLAUDE.md`.
 
 ---
 
@@ -140,10 +136,12 @@ Backend tafsilotlari: `backend/CLAUDE.md`. Mijoz ulanishi: har mijozning CLAUDE.
 ---
 
 ## 6. Roadmap (umumiy)
-1. **website** ✅ — birinchi taassurot, investor/hamkor uchun
-2. **backend** — Gemini AI, voice layer, geo-qidiruv (mijozlar shunga ulanadi)
-3. **tg-mini-app** — asosiy iste'molchi kanali (O'zbekistonda TG dominant)
-4. **pwa** — brauzer/home-screen ilova, offline
-5. **keyin:** restoran B2B dashboard, real POS integratsiya (iiko/Jowi/Poster)
+1. **website** ✅ — birinchi taassurot, investor/hamkor uchun (jamoa, yutuqlar, YC sahifa)
+2. **ilova** ✅ — TG Mini App = PWA + FastAPI backend (chat, geo, ovoz, bron/zakaz, auth)
+3. **keyin:** realtime ovoz (Gemini Live), AI niyat filtri, to'lov, ovqatlanish joylari
+   B2B dashboard, real POS integratsiya (iiko/Jowi/Poster)
 
-Har bo'sqichda: uz/ru/en, light/dark, responsive, `npm run build` toza.
+Har bosqichda: uz/ru/en, light/dark, responsive, build toza.
+
+**Jonli havolalar:** TG bot `t.me/FoodGPT_uzbot` · PWA
+`foodgpttgminiapppwa-production.up.railway.app` · YC sahifa: website `/uzcombinator`.
