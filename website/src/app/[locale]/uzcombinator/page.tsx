@@ -84,7 +84,7 @@ export default async function UzCombinatorPage({
         </header>
 
         {/* ===== MUAMMO / YECHIM ===== */}
-        <Section eyebrow="Muammo va yechim" title="Odam restoran emas, tez qaror qidiradi">
+        <Section eyebrow="Muammo va yechim" title="Odam ovqatlanish joyi emas, tez qaror qidiradi">
           <div className="grid gap-5 md:grid-cols-2">
             <div className="rounded-card-lg border border-line bg-surface p-8 shadow-soft">
               <p className="text-xs font-bold uppercase tracking-widest text-ink-mute">
@@ -116,7 +116,7 @@ export default async function UzCombinatorPage({
                   "Tabiiy tilda yoki ovozda so'raysiz",
                   "AI real-time holat bilan mos joyni topadi",
                   "Bron, zakaz va yetkazish bir joyda",
-                  "Moat — restoran real-time data + bron infratuzilmasi",
+                  "Moat — ovqatlanish joylari real-time data + bron infratuzilmasi",
                 ].map((s) => (
                   <Bullet key={s} accent text={s} />
                 ))}

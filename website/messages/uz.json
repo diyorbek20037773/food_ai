@@ -6,7 +6,7 @@
   "nav": {
     "features": "Imkoniyatlar",
     "how": "Qanday ishlaydi",
-    "restaurants": "Restoranlar uchun",
+    "restaurants": "Ovqatlanish joylari uchun",
     "team": "Jamoa",
     "contact": "Aloqa",
     "launch": "Ilovani ochish",
@@ -47,7 +47,7 @@
   "problem": {
     "eyebrow": "Muammo",
     "title": "O'zbekistonda hech kim Google Maps'da ovqat izlamaydi",
-    "lead": "Odam och qolganda restoran qidirmaydi — u tez va ishonchli qaror qidiradi. Ammo buni yechadigan asbob yo'q.",
+    "lead": "Odam och qolganda ovqatlanish joyi qidirmaydi — u tez va ishonchli qaror qidiradi. Ammo buni yechadigan asbob yo'q.",
     "oldWay": {
       "title": "Bugungi yo'l",
       "time": "5–10 daqiqa · 5 ta ilova",
@@ -82,7 +82,7 @@
       },
       {
         "title": "Real vaqtdagi holat",
-        "desc": "Hozir ochiqmi, taom tayyormi, kutish vaqti qancha — restoranlardan jonli ma'lumot."
+        "desc": "Hozir ochiqmi, taom tayyormi, kutish vaqti qancha — ovqatlanish joylaridan jonli ma'lumot."
       },
       {
         "title": "Bir bosishda bron",
@@ -90,7 +90,7 @@
       },
       {
         "title": "Zakaz va yetkazib berish",
-        "desc": "AI chatdan to'g'ridan-to'g'ri zakaz bering — restoran yoki hamkor kuryer eshigingizgacha yetkazadi."
+        "desc": "AI chatdan to'g'ridan-to'g'ri zakaz bering — ovqatlanish joyi yoki hamkor kuryer eshigingizgacha yetkazadi."
       },
       {
         "title": "Taksi va navigatsiya",
@@ -101,8 +101,8 @@
         "desc": "Odatlaringizni o'rganadi: sevimli oshxona, budjet va vaqtga mos taklif beradi."
       },
       {
-        "title": "Restoran paneli",
-        "desc": "Restoranlar menyu, tayyor taomlar va bo'sh stolni real vaqtda yangilaydi."
+        "title": "Joy uchun panel",
+        "desc": "Ovqatlanish joylari menyu, tayyor taomlar va bo'sh stolni real vaqtda yangilaydi."
       }
     ]
   },
@@ -146,7 +146,7 @@
     "items": [
       { "emoji": "🎓", "title": "Talabalar", "desc": "«50 ming so'mga nima yeyman?» — arzon, yaqin va tez variantlar." },
       { "emoji": "👨‍👩‍👧", "title": "Oilalar", "desc": "Bolalar zonasi, keng stol, oilaviy menyu bo'lgan joylar." },
-      { "emoji": "💕", "title": "Juftliklar", "desc": "Romantik muhit, tinch, chiroyli restoranlar — kayfiyatga mos." },
+      { "emoji": "💕", "title": "Juftliklar", "desc": "Romantik muhit, tinch, chiroyli joylar — kayfiyatga mos." },
       { "emoji": "✈️", "title": "Sayyohlar", "desc": "Haqiqiy milliy taomlar va mahalliylar sevadigan joylar." },
       { "emoji": "💼", "title": "Ofis xodimlari", "desc": "15 daqiqada ovqatlanish yoki ish stoliga tez yetkazish." },
       { "emoji": "👥", "title": "Do'stlar", "desc": "Katta kompaniya, jonli muhit, budjetga mos joylar." }
@@ -155,20 +155,20 @@
   "tech": {
     "eyebrow": "Qanday ishlaydi",
     "title": "Oddiy tashqarida, aqlli ichkarida",
-    "subtitle": "FoodGPT ortida real texnologiya — niyatni tushunadigan AI va jonli restoran ma'lumoti.",
+    "subtitle": "FoodGPT ortida real texnologiya — niyatni tushunadigan AI va jonli joy ma'lumoti.",
     "items": [
       { "title": "Niyatni tushunuvchi AI", "desc": "So'rovingizni tahlil qiladi: taom, budjet, kayfiyat, kompaniya va vaqtni ajratadi — filtr sozlash shart emas." },
       { "title": "Ovozli suhbat", "desc": "Yozishni xohlamasangiz — gapiring. AI ovozda tushunadi va ovozda javob beradi." },
-      { "title": "Jonli restoran ma'lumoti", "desc": "Ochiqmi, taom tayyormi, kutish vaqti, bo'sh stol — restoran panelidan real vaqtda." },
+      { "title": "Jonli joy ma'lumoti", "desc": "Ochiqmi, taom tayyormi, kutish vaqti, bo'sh stol — joy panelidan real vaqtda." },
       { "title": "Geo-qidiruv", "desc": "Lokatsiyangizga qarab eng yaqin, ochiq va mos joylarni masofa bo'yicha saralaydi." },
-      { "title": "Zakaz va yetkazib berish", "desc": "Chatdan zakaz — restoran yoki hamkor kuryer yetkazadi. Menyu, savat, to'lov bitta joyda." },
+      { "title": "Zakaz va yetkazib berish", "desc": "Chatdan zakaz — ovqatlanish joyi yoki hamkor kuryer yetkazadi. Menyu, savat, to'lov bitta joyda." },
       { "title": "Xavfsiz to'lov", "desc": "To'lov va ma'lumotlaringiz himoyalangan; kalitlar hech qachon ilovada saqlanmaydi." }
     ]
   },
   "forRestaurants": {
-    "eyebrow": "Restoranlar uchun",
+    "eyebrow": "Ovqatlanish joylari uchun",
     "title": "Ko'proq mijoz, kamroq ish",
-    "subtitle": "FoodGPT restoranlarga yangi mijoz oqimini olib keladi va ishlarini oson boshqarish imkonini beradi.",
+    "subtitle": "FoodGPT ovqatlanish joylariga yangi mijoz oqimini olib keladi va ishlarini oson boshqarish imkonini beradi.",
     "items": [
       { "title": "Bepul boshqaruv paneli", "desc": "Menyu, narx, ish vaqti va aksiyalarni bir joydan yangilang." },
       { "title": "Real vaqt holati", "desc": "«Bugun osh tayyor», «shashlik 15 daqiqa», «bo'sh stol bor» — bir bosishda." },
@@ -176,7 +176,7 @@
       { "title": "Analitika", "desc": "Necha kishi ko'rdi, bosdi, bron qildi — hammasini raqamlarda ko'ring." }
     ],
     "cta": "Hamkor bo'lish",
-    "ctaNote": "Restoran egasimisiz? Biz bilan bog'laning."
+    "ctaNote": "Ovqatlanish joyi egasimisiz? Biz bilan bog'laning."
   },
   "team": {
     "eyebrow": "Jamoa",
@@ -217,7 +217,7 @@
   "contact": {
     "eyebrow": "Aloqa",
     "title": "Bog'lanish yoki hamkorlik",
-    "subtitle": "Restoran egasimisiz yoki investormisiz — yozing, javob beramiz.",
+    "subtitle": "Ovqatlanish joyi egasimisiz yoki investormisiz — yozing, javob beramiz.",
     "name": "Ismingiz",
     "namePh": "Ism familiya",
     "email": "Email",
@@ -236,7 +236,7 @@
     "soon": "Tez orada",
     "tgApp": "Telegram Mini App",
     "pwa": "PWA ilova",
-    "restaurantPanel": "Restoran paneli",
+    "restaurantPanel": "Joy uchun panel",
     "rights": "Barcha huquqlar himoyalangan.",
     "madeIn": "Toshkentda mehr bilan yaratilgan"
   },
