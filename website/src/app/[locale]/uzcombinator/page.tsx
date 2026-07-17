@@ -83,6 +83,24 @@ export default async function UzCombinatorPage({
           </div>
         </header>
 
+        {/* ===== VIDEO PITCH ===== */}
+        <Section eyebrow="Video pitch" title="Bir daqiqada — biz kimmiz">
+          <div className="mx-auto max-w-3xl">
+            <div className="relative aspect-video overflow-hidden rounded-card-lg border border-line bg-black shadow-soft-lg">
+              <iframe
+                src="https://drive.google.com/file/d/1kOGNkG-YTh_wXrB7fD6HDsj9SnSL_uEl/preview"
+                title="FoodGPT — UzCombinator 2026 video pitch"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                className="absolute inset-0 h-full w-full"
+              />
+            </div>
+            <p className="mt-4 text-center text-[13px] text-ink-mute">
+              {"1 daqiqalik pitch — muammo, yechim va nega aynan biz"}
+            </p>
+          </div>
+        </Section>
+
         {/* ===== MUAMMO / YECHIM ===== */}
         <Section eyebrow="Muammo va yechim" title="Odam ovqatlanish joyi emas, tez qaror qidiradi">
           <div className="grid gap-5 md:grid-cols-2">
