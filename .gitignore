@@ -26,3 +26,6 @@ Thumbs.db
 .vscode/*
 !.vscode/extensions.json
 .idea
+
+# Local source assets (team photos, YC template, PDFs) — copied into website/public
+founders/
