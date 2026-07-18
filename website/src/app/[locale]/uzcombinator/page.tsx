@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { setRequestLocale } from "next-intl/server";
 import { Logo } from "@/components/site/logo";
-import { TG_BOT_URL, PWA_URL } from "@/lib/links";
-import { Trophy, Users, Rocket, ArrowUpRight, Send, Mail } from "lucide-react";
+import { TG_BOT_URL, PWA_URL, CONTACT_TG_URL } from "@/lib/links";
+import { Trophy, Users, Rocket, ArrowUpRight, Send, MessageCircle } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "FoodGPT × UzCombinator",
@@ -206,10 +206,12 @@ export default async function UzCombinatorPage({
               <Send className="h-[18px] w-[18px]" /> {"Telegram orqali bog'lanish"}
             </a>
             <a
-              href="mailto:ubaydullayevgiyosiddin2003@gmail.com"
+              href={CONTACT_TG_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex h-12 items-center gap-2 rounded-control border border-white/25 px-6 font-medium text-white transition-colors hover:border-accent"
             >
-              <Mail className="h-[18px] w-[18px]" /> Email yozish
+              <MessageCircle className="h-[18px] w-[18px]" /> {"To'g'ridan-to'g'ri yozish"}
             </a>
           </div>
         </div>

@@ -4,7 +4,8 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Reveal } from "./reveal";
 import { Button } from "@/components/ui/button";
-import { Mail, Send, CheckCircle2 } from "lucide-react";
+import { Send, CheckCircle2 } from "lucide-react";
+import { CONTACT_TG_HANDLE, CONTACT_TG_URL } from "@/lib/links";
 
 export function Contact() {
   const t = useTranslations("contact");
@@ -28,11 +29,13 @@ export function Contact() {
           <div className="mt-8">
             <p className="text-sm text-ink-mute">{t("or")}</p>
             <a
-              href="mailto:hello@foodgpt.uz"
+              href={CONTACT_TG_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-2 inline-flex items-center gap-2 text-[15px] font-medium text-accent-ink hover:underline"
             >
-              <Mail className="h-4 w-4" />
-              hello@foodgpt.uz
+              <Send className="h-4 w-4" />
+              {CONTACT_TG_HANDLE}
             </a>
           </div>
         </Reveal>
