@@ -29,3 +29,7 @@ Thumbs.db
 
 # Local source assets (team photos, YC template, PDFs) — copied into website/public
 founders/
+
+# Presentation / pitch decks (local only, not part of the site)
+FoodGPT-taqdimot-award.*
+~$*    # Office lock/temp files
