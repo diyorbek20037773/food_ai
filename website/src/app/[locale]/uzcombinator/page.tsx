@@ -15,7 +15,7 @@ const TEAM = [
   { photo: "/team/zaxro.jpg", name: "Quvatova Zaxro", role: "Asoschi · CEO", bio: "Mahsulot va strategiya. EdTech Hackathon 2026 g'olibi." },
   { photo: "/team/dilshod.jpg", name: "Sultonov Dilshod", role: "Co-founder · Data Scientist", bio: "AI va ma'lumotlar. Green Tech Hackathon 2025 sovrindori." },
   { photo: "/team/shohruh.jpg", name: "Egamberganov Shohruh", role: "Co-founder · Full-stack Developer", bio: "Backend, ilova va infratuzilma." },
-  { photo: "/team/nodirbek.jpg", name: "Ibragimov Nodirbek", role: "Co-founder · UI/UX Designer", bio: "Mahsulot dizayni va tajriba." },
+  { photo: "/team/nodirbek.jpg", name: "Ibragimov Nodirbek", role: "Co-founder · Senior Data Analyst", bio: "Ma'lumotlar tahlili va foydalanuvchi tadqiqoti." },
 ];
 
 export default async function UzCombinatorPage({
