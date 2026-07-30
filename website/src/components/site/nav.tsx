@@ -25,6 +25,7 @@ export function Nav() {
     { href: "#features", label: t("features") },
     { href: "#how", label: t("how") },
     { href: "#restaurants", label: t("restaurants") },
+    { href: "#news", label: t("news") },
     { href: "#contact", label: t("contact") },
   ];
 

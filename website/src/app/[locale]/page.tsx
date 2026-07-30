@@ -13,6 +13,7 @@ import { Launch } from "@/components/site/launch";
 import { InstallGuide } from "@/components/site/install-guide";
 import { Team } from "@/components/site/team";
 import { Achievements } from "@/components/site/achievements";
+import { News } from "@/components/site/news";
 import { UzCombinator } from "@/components/site/uzcombinator";
 import { Contact } from "@/components/site/contact";
 import { Footer } from "@/components/site/footer";
@@ -42,6 +43,7 @@ export default async function Home({
         <InstallGuide />
         <Team />
         <Achievements />
+        <News />
         <UzCombinator />
         <Contact />
       </main>
