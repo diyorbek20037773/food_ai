@@ -2,12 +2,13 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Reveal } from "./reveal";
 
-const PHOTOS = [
+// null -> no photo for this member; an initial-letter avatar is shown instead.
+const PHOTOS: (string | null)[] = [
   "/team/zaxro.jpg",
   "/team/dilshod.jpg",
   "/team/shohruh.jpg",
   "/team/nodirbek.jpg",
-  "/team/dilshoda.jpg",
+  null,
 ];
 
 export function Team() {
@@ -39,13 +40,22 @@ export function Team() {
             <Reveal key={m.name} delay={0.05 * i}>
               <div className="flex h-full flex-col items-center rounded-card border border-line bg-surface p-5 text-center shadow-soft">
                 <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full ring-1 ring-line">
-                  <Image
-                    src={PHOTOS[i]}
-                    alt={m.name}
-                    fill
-                    sizes="96px"
-                    className="object-cover"
-                  />
+                  {PHOTOS[i] ? (
+                    <Image
+                      src={PHOTOS[i]}
+                      alt={m.name}
+                      fill
+                      sizes="96px"
+                      className="object-cover"
+                    />
+                  ) : (
+                    <span
+                      aria-hidden
+                      className="grid h-full w-full place-items-center bg-[color-mix(in_srgb,var(--accent)_14%,transparent)] text-3xl font-bold text-accent"
+                    >
+                      {m.name.charAt(0)}
+                    </span>
+                  )}
                 </div>
                 <p className="mt-4 font-semibold text-ink">{m.name}</p>
                 <p className="mt-1 text-[11px] font-semibold uppercase tracking-wide text-accent-ink">
