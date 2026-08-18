@@ -83,8 +83,8 @@
         "desc": "\"Cheap lunch\" or \"a warm place with friends\" — the AI reads your intent, no filters to fiddle with."
       },
       {
-        "title": "Real-time status",
-        "desc": "Is it open now, is the dish ready, how long is the wait — live data straight from the venues."
+        "title": "Real, verified venues",
+        "desc": "Every venue is registered by its actual owner, with a real menu — not a made-up catalog."
       },
       {
         "title": "One-tap booking",
@@ -104,7 +104,7 @@
       },
       {
         "title": "Venue panel",
-        "desc": "Venues update their menu, ready dishes and free tables in real time."
+        "desc": "Venues add their name, location and menu in a couple of minutes — no complicated setup."
       }
     ]
   },
@@ -148,7 +148,7 @@
       },
       {
         "value": "24/7",
-        "label": "real-time open and ready status"
+        "label": "customers can find a venue on the map"
       }
     ],
     "note": "The habit of searching Google Maps for food never took hold in Uzbekistan — FoodGPT fills that gap."
@@ -204,8 +204,8 @@
         "desc": "Don't want to type — just speak. The AI understands voice and replies by voice."
       },
       {
-        "title": "Live venue data",
-        "desc": "Is it open, is the dish ready, the wait, a free table — from the venue panel in real time."
+        "title": "Real venue data",
+        "desc": "Every venue is a real name, location and menu from its owner. No synthetic data."
       },
       {
         "title": "Geo search",
@@ -227,20 +227,20 @@
     "subtitle": "FoodGPT brings venues a new stream of customers and makes running the place easier.",
     "items": [
       {
-        "title": "Free management panel",
-        "desc": "Update menu, prices, hours and promotions from one place."
+        "title": "Upload your menu with one photo",
+        "desc": "Take a photo of your menu — the AI reads the dishes and prices and adds them to the app."
       },
       {
-        "title": "Real-time status",
-        "desc": "\"Plov ready today\", \"kebab in 15 min\", \"free table\" — in one tap."
+        "title": "You're instantly visible",
+        "desc": "The moment you register, your venue shows up on the map and in AI replies."
       },
       {
         "title": "New customers",
         "desc": "Nearby users who are a match for you find you through the AI."
       },
       {
-        "title": "Analytics",
-        "desc": "How many viewed, tapped, booked — all in numbers."
+        "title": "Analytics (coming soon)",
+        "desc": "How many people viewed and picked your venue — all in numbers."
       }
     ],
     "cta": "Become a partner",

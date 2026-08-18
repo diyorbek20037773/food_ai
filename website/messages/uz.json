@@ -83,8 +83,8 @@
         "desc": "\"Arzon tushlik\" yoki \"do'stlar bilan issiq joy\" — AI niyatingizni tushunadi, filtr sozlash shart emas."
       },
       {
-        "title": "Real vaqtdagi holat",
-        "desc": "Hozir ochiqmi, taom tayyormi, kutish vaqti qancha — ovqatlanish joylaridan jonli ma'lumot."
+        "title": "Real, tekshirilgan joylar",
+        "desc": "Har bir joy — o'z egasi ro'yxatdan o'tkazgan, haqiqiy menyusi bilan. O'ylab topilgan katalog emas."
       },
       {
         "title": "Bir bosishda bron",
@@ -104,7 +104,7 @@
       },
       {
         "title": "Joy uchun panel",
-        "desc": "Ovqatlanish joylari menyu, tayyor taomlar va bo'sh stolni real vaqtda yangilaydi."
+        "desc": "Ovqatlanish joylari nomi, joylashuvi va menyusini bir necha daqiqada qo'shadi — murakkab sozlash shart emas."
       }
     ]
   },
@@ -148,7 +148,7 @@
       },
       {
         "value": "24/7",
-        "label": "real vaqtda ochiq va tayyor holat"
+        "label": "mijozlar xaritada joy topa oladi"
       }
     ],
     "note": "Google Maps'da ovqat izlash odati O'zbekistonda shakllanmagan — bu bo'shliqni FoodGPT to'ldiradi."
@@ -204,8 +204,8 @@
         "desc": "Yozishni xohlamasangiz — gapiring. AI ovozda tushunadi va ovozda javob beradi."
       },
       {
-        "title": "Jonli joy ma'lumoti",
-        "desc": "Ochiqmi, taom tayyormi, kutish vaqti, bo'sh stol — joy panelidan real vaqtda."
+        "title": "Real joy ma'lumoti",
+        "desc": "Har bir joy — egasi qo'shgan haqiqiy nom, joylashuv va menyu. Sintetik ma'lumot yo'q."
       },
       {
         "title": "Geo-qidiruv",
@@ -227,20 +227,20 @@
     "subtitle": "FoodGPT ovqatlanish joylariga yangi mijoz oqimini olib keladi va ishlarini oson boshqarish imkonini beradi.",
     "items": [
       {
-        "title": "Bepul boshqaruv paneli",
-        "desc": "Menyu, narx, ish vaqti va aksiyalarni bir joydan yangilang."
+        "title": "Menyuni bir surat bilan yuklang",
+        "desc": "Menyungizni suratga oling — sun'iy intellekt taom va narxlarni o'zi o'qib, ilovaga qo'shadi."
       },
       {
-        "title": "Real vaqt holati",
-        "desc": "«Bugun osh tayyor», «shashlik 15 daqiqa», «bo'sh stol bor» — bir bosishda."
+        "title": "Darhol ko'rinasiz",
+        "desc": "Ro'yxatdan o'tgan zahoti joyingiz xaritada va AI javoblarida mijozlarga chiqadi."
       },
       {
         "title": "Yangi mijozlar",
         "desc": "Aynan sizga mos, yaqin foydalanuvchilar AI orqali sizni topadi."
       },
       {
-        "title": "Analitika",
-        "desc": "Necha kishi ko'rdi, bosdi, bron qildi — hammasini raqamlarda ko'ring."
+        "title": "Analitika (tez orada)",
+        "desc": "Necha kishi ko'rdi, joyingizni tanladi — hammasini raqamlarda ko'rasiz."
       }
     ],
     "cta": "Hamkor bo'lish",
