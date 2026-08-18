@@ -34,3 +34,7 @@ founders/
 FoodGPT-taqdimot-award.*
 FoodGPT-*.pdf
 ~$*    # Office lock/temp files
+
+# Separate, local-only prototype repo (reference for architecture patterns
+# only — its own repo, not part of food_ai; never commit here)
+BonApp-main/
