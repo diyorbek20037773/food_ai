@@ -3,8 +3,8 @@ import { createNavigation } from "next-intl/navigation";
 
 export const routing = defineRouting({
   locales: ["uz", "ru", "en"],
-  defaultLocale: "uz",
-  // uz has no prefix (/), ru and en are prefixed (/ru, /en)
+  defaultLocale: "en",
+  // en has no prefix (/), uz and ru are prefixed (/uz, /ru)
   localePrefix: "as-needed",
 });
 

@@ -67,7 +67,7 @@ bron/zakaz. Batafsil: `food_gpttgminiapppwa/CLAUDE.md`.
 **Shrift:** Inter. **Radius:** kartalar 20–24px, kontrol 12–14px.
 **Qochish:** delivery-app estetikasi, chegirma bannerlari, qizil ustunligi, siqiq layout.
 
-**i18n:** uz (default) · ru · en — uchala loyihada.
+**i18n:** en (default) · uz · ru — uchala loyihada.
 **Theme:** light/dark, token-level, tizim + toggle.
 
 > Yangi loyiha qurganda: `website/`dagi design tokenlar, i18n xabarlari va UI

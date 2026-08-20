@@ -169,7 +169,7 @@ public/
 ---
 
 ## 5. i18n qoidalari
-- **Default:** o'zbek (`uz`). URL: `/` → uz, `/ru`, `/en` (locale prefix `as-needed`).
+- **Default:** inglizcha (`en`). URL: `/` → en, `/uz`, `/ru` (locale prefix `as-needed`).
 - **Hech qanday matn kodda hardcode QILINMAYDI** — barchasi `messages/{locale}.json`.
 - Kalitlar bo'limlar bo'yicha nested: `nav.*`, `hero.*`, `features.*`, `demo.*`...
 - Uch til ham to'liq to'ldiriladi (bo'sh string yo'q).
