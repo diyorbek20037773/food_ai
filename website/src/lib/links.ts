@@ -12,3 +12,8 @@ export const CONTACT_TG_URL = "https://t.me/ZaSa0301";
 // "Anyone with the link".
 export const NEWS_UZC_VIDEO_EMBED_URL =
   "https://drive.google.com/file/d/1Vs8MZmnHuohEnPhjv_PxrD-SrtkRDBJL/preview";
+
+// Demo section: product walkthrough (YouTube Shorts, vertical).
+const DEMO_VIDEO_ID = "ODcB0QnreZk";
+export const DEMO_VIDEO_EMBED_URL = `https://www.youtube-nocookie.com/embed/${DEMO_VIDEO_ID}?autoplay=1&rel=0&modestbranding=1`;
+export const DEMO_VIDEO_THUMBNAIL_URL = `https://i.ytimg.com/vi/${DEMO_VIDEO_ID}/hqdefault.jpg`;
